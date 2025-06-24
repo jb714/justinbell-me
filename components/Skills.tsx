@@ -89,35 +89,52 @@ const Skills = () => {
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
         >
-          <h2 className="heading-2 text-center mb-12">Skills & Expertise</h2>
+          <h2 className="heading-2 text-center mb-12">
+            <span className="text-gray-900 dark:text-gray-100">Skills & Expertise</span>
+            <div className="w-24 h-1 bg-gradient-to-r from-accent-500 to-primary-500 mx-auto mt-4 rounded-full"></div>
+          </h2>
           <div className="grid md:grid-cols-3 gap-8">
-            {skills.map((skillGroup) => (
-              <div
+            {skills.map((skillGroup, groupIndex) => (
+              <motion.div
                 key={skillGroup.category}
-                className="bg-gray-50 dark:bg-gray-800 rounded-lg p-6"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: groupIndex * 0.1 }}
+                viewport={{ once: true }}
+                className={`rounded-lg p-6 border ${
+                  groupIndex === 0 
+                    ? 'bg-gradient-to-br from-primary-50 to-primary-100 dark:from-primary-900/20 dark:to-primary-800/20 border-primary-200 dark:border-primary-700'
+                    : groupIndex === 1
+                    ? 'bg-gradient-to-br from-secondary-50 to-secondary-100 dark:from-secondary-900/20 dark:to-secondary-800/20 border-secondary-200 dark:border-secondary-700'
+                    : 'bg-gradient-to-br from-accent-50 to-accent-100 dark:from-accent-900/20 dark:to-accent-800/20 border-accent-200 dark:border-accent-700'
+                }`}
               >
-                <h3 className="text-xl font-semibold mb-6">{skillGroup.category}</h3>
+                <h3 className="text-xl font-semibold mb-6 text-gray-900 dark:text-gray-100">{skillGroup.category}</h3>
                 <div className="grid grid-cols-2 gap-4">
-                  {skillGroup.items.map((skill) => (
+                  {skillGroup.items.map((skill, index) => (
                     <motion.div
                       key={skill.name}
                       initial={{ opacity: 0, scale: 0.9 }}
                       whileInView={{ opacity: 1, scale: 1 }}
-                      transition={{ duration: 0.3 }}
+                      transition={{ duration: 0.3, delay: index * 0.05 }}
                       viewport={{ once: true }}
-                      className="flex items-center space-x-3 p-3 bg-white dark:bg-gray-700 rounded-lg shadow-sm hover:shadow-md transition-shadow"
+                      className="flex items-center space-x-3 p-3 bg-white/80 dark:bg-gray-800/80 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 border border-gray-200 dark:border-gray-600 group"
+                      whileHover={{ scale: 1.05, y: -2 }}
                     >
                       <skill.icon 
-                        className="w-6 h-6" 
-                        style={{ color: skill.color }}
+                        className="w-6 h-6 transition-all duration-300 group-hover:scale-110" 
+                        style={{ 
+                          color: skill.color,
+                          filter: 'drop-shadow(0 0 8px rgba(0,0,0,0.1))'
+                        }}
                       />
-                      <span className="text-gray-700 dark:text-gray-300 font-medium">
+                      <span className="text-gray-700 dark:text-gray-300 font-medium group-hover:text-gray-900 dark:group-hover:text-gray-100 transition-colors">
                         {skill.name}
                       </span>
                     </motion.div>
                   ))}
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </motion.div>

@@ -65,7 +65,10 @@ const Resume = () => {
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
         >
-          <h2 className="heading-2 text-center mb-12">Professional Experience</h2>
+          <h2 className="heading-2 text-center mb-12">
+            <span className="text-gray-900 dark:text-gray-100">Professional Experience</span>
+            <div className="w-24 h-1 bg-gradient-to-r from-primary-600 to-secondary-500 mx-auto mt-4 rounded-full"></div>
+          </h2>
           
           <div className="space-y-8">
             {experience.map((job, index) => (
@@ -75,15 +78,23 @@ const Resume = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-gray-50 dark:bg-gray-800 rounded-lg p-6"
+                className={`rounded-lg p-6 border transition-all duration-300 hover:shadow-lg ${
+                  index % 2 === 0 
+                    ? 'bg-gradient-to-br from-primary-50 to-primary-100 dark:from-primary-900/20 dark:to-primary-800/20 border-primary-200 dark:border-primary-700'
+                    : 'bg-gradient-to-br from-secondary-50 to-secondary-100 dark:from-secondary-900/20 dark:to-secondary-800/20 border-secondary-200 dark:border-secondary-700'
+                }`}
               >
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
                   <div>
-                    <h4 className="text-xl font-semibold">{job.title}</h4>
+                    <h4 className="text-xl font-semibold text-gray-900 dark:text-gray-100">{job.title}</h4>
                     <p className="text-gray-600 dark:text-gray-300">{job.company}</p>
                     <p className="text-sm text-gray-500 dark:text-gray-400">{job.location}</p>
                   </div>
-                  <span className="text-primary-600 dark:text-primary-400 font-medium mt-2 md:mt-0">
+                  <span className={`font-medium mt-2 md:mt-0 px-3 py-1 rounded-full text-sm ${
+                    index % 2 === 0 
+                      ? 'bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 border border-primary-200 dark:border-primary-700'
+                      : 'bg-secondary-100 dark:bg-secondary-900/30 text-secondary-700 dark:text-secondary-300 border border-secondary-200 dark:border-secondary-700'
+                  }`}>
                     {job.period}
                   </span>
                 </div>
@@ -98,11 +109,13 @@ const Resume = () => {
 
           {/* Download Resume Button */}
           <div className="text-center mt-12">
-            <a
+            <motion.a
               href="/resume.pdf"
-              className="inline-flex items-center px-6 py-3 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors"
+              className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-accent-500 to-accent-600 text-white rounded-lg hover:from-accent-600 hover:to-accent-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
               target="_blank"
               rel="noopener noreferrer"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
               <svg
                 className="w-5 h-5 mr-2"
@@ -118,7 +131,7 @@ const Resume = () => {
                 />
               </svg>
               Download Resume
-            </a>
+            </motion.a>
           </div>
         </motion.div>
       </div>

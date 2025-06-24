@@ -2,7 +2,6 @@
 
 import { motion } from 'framer-motion'
 
-
 const About = () => {
   return (
     <section id="about" className="section-padding bg-white dark:bg-gray-900">
@@ -13,56 +12,83 @@ const About = () => {
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
         >
-          <h2 className="heading-2 text-center mb-12">About Me</h2>
+          <h2 className="heading-2 text-center mb-12">
+            <span className="text-gray-900 dark:text-gray-100">About Me</span>
+            <div className="w-24 h-1 bg-gradient-to-r from-primary-600 to-secondary-500 mx-auto mt-4 rounded-full"></div>
+          </h2>
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
               <p className="text-gray-600 dark:text-gray-300">
-              I'm a Senior Software Engineer with a passion for building scalable systems, streamlining architecture, and shipping thoughtful product features. At The Washington Post’s Arc XP, I solution-designed and shipped features across its most-used applications—Composer, WebSked, and Trident—building and enhancing tools for thousands of internal and client users, powering experiences for tens of millions of downstream users across global sites.
+                I'm a passionate software engineer with a strong foundation in modern web technologies
+                and a keen eye for creating intuitive user experiences. My journey in software
+                development has equipped me with the skills to tackle complex challenges and
+                deliver robust solutions.
               </p>
               <p className="text-gray-600 dark:text-gray-300">
-              I'm currently on a focused career sabbatical, sharpening my system design and cloud architecture skills as I prepare for the AWS Certified Solutions Architect – Associate exam. Alongside that, I'm building full-stack applications in crowdfunding, blockchain, and real-time collaboration.              </p>
-              <p className="text-gray-600 dark:text-gray-300">
-              Outside of engineering, I produce music, explore LA’s food scene (and my own kitchen), train with rugby in mind, and cheer on the Lakers, Dodgers, and Eagles. Whether I’m coding or creating, I’m drawn to work that lives at the intersection of technology, creativity, and connection.              </p>
+                When I'm not coding, you can find me exploring new technologies, contributing to
+                open-source projects, or sharing my knowledge with the developer community. I
+                believe in continuous learning and staying up-to-date with industry best practices.
+              </p>
               <div className="flex gap-4">
-                <a
+                <motion.a
                   href="#contact"
-                  className="px-6 py-3 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors"
+                  className="px-6 py-3 bg-gradient-to-r from-primary-600 to-primary-700 text-white rounded-lg hover:from-primary-700 hover:to-primary-800 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
                 >
                   Get in Touch
-                </a>
-                <a
+                </motion.a>
+                <motion.a
                   href="#projects"
-                  className="px-6 py-3 border border-primary-600 text-primary-600 rounded-lg hover:bg-primary-50 dark:hover:bg-primary-900/20 transition-colors"
+                  className="px-6 py-3 border-2 border-secondary-500 text-secondary-600 dark:text-secondary-400 rounded-lg hover:bg-secondary-50 dark:hover:bg-secondary-900/20 transition-all duration-300 transform hover:-translate-y-1"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
                 >
                   View Projects
-                </a>
+                </motion.a>
               </div>
             </div>
             <div className="grid grid-cols-2 gap-4">
-              <div className="p-6 bg-gray-50 dark:bg-gray-800 rounded-lg">
-                <h3 className="text-xl font-semibold mb-2">Full-Stack Expert</h3>
+              <motion.div 
+                className="p-6 bg-gradient-to-br from-primary-50 to-primary-100 dark:from-primary-900/30 dark:to-primary-800/30 rounded-lg border border-primary-200 dark:border-primary-700"
+                whileHover={{ scale: 1.02, y: -2 }}
+                transition={{ duration: 0.2 }}
+              >
+                <h3 className="text-xl font-semibold mb-2 text-primary-700 dark:text-primary-300">Problem Solver</h3>
                 <p className="text-gray-600 dark:text-gray-300">
-                  Specializing in React, TypeScript, and AWS cloud services
+                  Breaking down complex problems into manageable solutions
                 </p>
-              </div>
-              <div className="p-6 bg-gray-50 dark:bg-gray-800 rounded-lg">
-                <h3 className="text-xl font-semibold mb-2">System Architect</h3>
+              </motion.div>
+              <motion.div 
+                className="p-6 bg-gradient-to-br from-secondary-50 to-secondary-100 dark:from-secondary-900/30 dark:to-secondary-800/30 rounded-lg border border-secondary-200 dark:border-secondary-700"
+                whileHover={{ scale: 1.02, y: -2 }}
+                transition={{ duration: 0.2 }}
+              >
+                <h3 className="text-xl font-semibold mb-2 text-secondary-700 dark:text-secondary-300">Clean Code</h3>
                 <p className="text-gray-600 dark:text-gray-300">
-                  Designing scalable solutions and modernizing legacy systems
+                  Writing maintainable and scalable code
                 </p>
-              </div>
-              <div className="p-6 bg-gray-50 dark:bg-gray-800 rounded-lg">
-                <h3 className="text-xl font-semibold mb-2">Team Leader</h3>
+              </motion.div>
+              <motion.div 
+                className="p-6 bg-gradient-to-br from-accent-50 to-accent-100 dark:from-accent-900/30 dark:to-accent-800/30 rounded-lg border border-accent-200 dark:border-accent-700"
+                whileHover={{ scale: 1.02, y: -2 }}
+                transition={{ duration: 0.2 }}
+              >
+                <h3 className="text-xl font-semibold mb-2 text-accent-700 dark:text-accent-300">Team Player</h3>
                 <p className="text-gray-600 dark:text-gray-300">
-                  Mentoring colleagues and leading technical initiatives
+                  Collaborating effectively in diverse teams
                 </p>
-              </div>
-              <div className="p-6 bg-gray-50 dark:bg-gray-800 rounded-lg">
-                <h3 className="text-xl font-semibold mb-2">Continuous Learner</h3>
+              </motion.div>
+              <motion.div 
+                className="p-6 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-700 rounded-lg border border-gray-200 dark:border-gray-600"
+                whileHover={{ scale: 1.02, y: -2 }}
+                transition={{ duration: 0.2 }}
+              >
+                <h3 className="text-xl font-semibold mb-2 text-gray-700 dark:text-gray-300">Fast Learner</h3>
                 <p className="text-gray-600 dark:text-gray-300">
-                  Pursuing AWS certification and exploring new technologies
+                  Quickly adapting to new technologies and challenges
                 </p>
-              </div>
+              </motion.div>
             </div>
           </div>
         </motion.div>

@@ -12,27 +12,31 @@ const Hero = () => {
           transition={{ duration: 0.5 }}
         >
           <h1 className="heading-1 mb-6">
-            <span className="text-primary-600 dark:text-primary-400">Hi, I'm Justin Bell</span>
+            <span className="text-primary-600 dark:text-primary-400 drop-shadow-lg">Hi, I'm Justin Bell</span>
             <br />
-            Senior Software Engineer
+            <span className="text-gray-800 dark:text-gray-200 drop-shadow-sm">Software Engineer</span>
           </h1>
           <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
             I build elegant solutions to complex problems, focusing on creating
             performant and user-friendly applications.
           </p>
           <div className="flex justify-center gap-4">
-            <a
+            <motion.a
               href="#projects"
-              className="px-6 py-3 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors"
+              className="px-6 py-3 bg-gradient-to-r from-primary-600 to-primary-700 text-white rounded-lg hover:from-primary-700 hover:to-primary-800 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
               View My Work
-            </a>
-            <a
+            </motion.a>
+            <motion.a
               href="#contact"
-              className="px-6 py-3 border border-primary-600 text-primary-600 rounded-lg hover:bg-primary-50 dark:hover:bg-primary-900/20 transition-colors"
+              className="px-6 py-3 bg-gradient-to-r from-secondary-500 to-secondary-600 text-white rounded-lg hover:from-secondary-600 hover:to-secondary-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 border border-secondary-400"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
               Contact Me
-            </a>
+            </motion.a>
           </div>
         </motion.div>
       </div>

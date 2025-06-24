@@ -51,20 +51,24 @@ const Contact = () => {
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
         >
-          <h2 className="heading-2 text-center mb-12">Get in Touch</h2>
+          <h2 className="heading-2 text-center mb-12">
+            <span className="text-gray-900 dark:text-gray-100">Get in Touch</span>
+            <div className="w-24 h-1 bg-gradient-to-r from-secondary-500 to-accent-500 mx-auto mt-4 rounded-full"></div>
+          </h2>
           <div className="grid md:grid-cols-2 gap-12">
             <div>
-              <h3 className="text-xl font-semibold mb-4">Let's Connect</h3>
+              <h3 className="text-xl font-semibold mb-4 text-gray-900 dark:text-gray-100">Let's Connect</h3>
               <p className="text-gray-600 dark:text-gray-300 mb-6">
                 I'm always open to discussing new projects and ideas
               </p>
               <div className="space-y-4">
-                <a
+                <motion.a
                   href="mailto:justin@justinbell.me"
-                  className="flex items-center text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400"
+                  className="flex items-center text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-all duration-300 group"
+                  whileHover={{ x: 5 }}
                 >
                   <svg
-                    className="w-6 h-6 mr-3"
+                    className="w-6 h-6 mr-3 group-hover:scale-110 transition-transform duration-300"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -77,7 +81,7 @@ const Contact = () => {
                     />
                   </svg>
                   justin@justinbell.me
-                </a>
+                </motion.a>
                 {/* <a
                   href="https://github.com/yourusername"
                   target="_blank"
@@ -97,14 +101,15 @@ const Contact = () => {
                   </svg>
                   GitHub
                 </a> */}
-                <a
+                <motion.a
                   href="https://linkedin.com/in/jbell7"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400"
+                  className="flex items-center text-gray-600 dark:text-gray-300 hover:text-secondary-600 dark:hover:text-secondary-400 transition-all duration-300 group"
+                  whileHover={{ x: 5 }}
                 >
                   <svg
-                    className="w-6 h-6 mr-3"
+                    className="w-6 h-6 mr-3 group-hover:scale-110 transition-transform duration-300"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                   >
@@ -115,7 +120,7 @@ const Contact = () => {
                     />
                   </svg>
                   LinkedIn
-                </a>
+                </motion.a>
               </div>
             </div>
             <form onSubmit={handleSubmit} className="space-y-6">
@@ -132,7 +137,7 @@ const Contact = () => {
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white px-4 py-2"
+                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white px-4 py-2 focus:ring-2 focus:ring-primary-500/20 transition-all duration-300"
                   required
                   disabled={status === 'submitting'}
                 />
@@ -150,7 +155,7 @@ const Contact = () => {
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white px-4 py-2"
+                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-secondary-500 focus:ring-secondary-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white px-4 py-2 focus:ring-2 focus:ring-secondary-500/20 transition-all duration-300"
                   required
                   disabled={status === 'submitting'}
                 />
@@ -168,27 +173,37 @@ const Contact = () => {
                   value={formData.message}
                   onChange={handleChange}
                   rows={4}
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white px-4 py-3"
+                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-accent-500 focus:ring-accent-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white px-4 py-3 focus:ring-2 focus:ring-accent-500/20 transition-all duration-300"
                   required
                   disabled={status === 'submitting'}
                 />
               </div>
-              <button
+              <motion.button
                 type="submit"
-                className="w-full px-6 py-3 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full px-6 py-3 bg-gradient-to-r from-primary-600 to-primary-700 text-white rounded-lg hover:from-primary-700 hover:to-primary-800 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 disabled:opacity-50 disabled:cursor-not-allowed"
                 disabled={status === 'submitting'}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
               >
                 {status === 'submitting' ? 'Sending...' : 'Send Message'}
-              </button>
+              </motion.button>
               {status === 'success' && (
-                <p className="text-green-600 dark:text-green-400 text-center">
+                <motion.p 
+                  className="text-green-600 dark:text-green-400 text-center"
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                >
                   Message sent successfully!
-                </p>
+                </motion.p>
               )}
               {status === 'error' && (
-                <p className="text-red-600 dark:text-red-400 text-center">
+                <motion.p 
+                  className="text-red-600 dark:text-red-400 text-center"
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                >
                   Failed to send message. Please try again or email me directly.
-                </p>
+                </motion.p>
               )}
             </form>
           </div>
