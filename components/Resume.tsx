@@ -56,56 +56,141 @@ const experience = [
 ]
 
 const Resume = () => {
+  const getJobColors = (index: number) => {
+    const colorSchemes = [
+      {
+        bg: 'bg-gradient-to-br from-emerald-50 to-emerald-100 dark:from-emerald-900/20 dark:to-emerald-800/20',
+        border: 'border-emerald-200 dark:border-emerald-700',
+        accent: 'bg-gradient-to-r from-emerald-500 to-emerald-600',
+        text: 'text-emerald-700 dark:text-emerald-300',
+        badge: 'bg-emerald-100 dark:bg-emerald-900/30 text-emerald-800 dark:text-emerald-200 border-emerald-200 dark:border-emerald-700'
+      },
+      {
+        bg: 'bg-gradient-to-br from-primary-50 to-primary-100 dark:from-primary-900/20 dark:to-primary-800/20',
+        border: 'border-primary-200 dark:border-primary-700',
+        accent: 'bg-gradient-to-r from-primary-500 to-primary-600',
+        text: 'text-primary-700 dark:text-primary-300',
+        badge: 'bg-primary-100 dark:bg-primary-900/30 text-primary-800 dark:text-primary-200 border-primary-200 dark:border-primary-700'
+      },
+      {
+        bg: 'bg-gradient-to-br from-secondary-50 to-secondary-100 dark:from-secondary-900/20 dark:to-secondary-800/20',
+        border: 'border-secondary-200 dark:border-secondary-700',
+        accent: 'bg-gradient-to-r from-secondary-500 to-secondary-600',
+        text: 'text-secondary-700 dark:text-secondary-300',
+        badge: 'bg-secondary-100 dark:bg-secondary-900/30 text-secondary-800 dark:text-secondary-200 border-secondary-200 dark:border-secondary-700'
+      },
+      {
+        bg: 'bg-gradient-to-br from-accent-50 to-accent-100 dark:from-accent-900/20 dark:to-accent-800/20',
+        border: 'border-accent-200 dark:border-accent-700',
+        accent: 'bg-gradient-to-r from-accent-500 to-accent-600',
+        text: 'text-accent-700 dark:text-accent-300',
+        badge: 'bg-accent-100 dark:bg-accent-900/30 text-accent-800 dark:text-accent-200 border-accent-200 dark:border-accent-700'
+      }
+    ]
+    return colorSchemes[index % colorSchemes.length]
+  }
+
   return (
-    <section id="resume" className="section-padding bg-white dark:bg-gray-900">
-      <div className="container-padding mx-auto">
+    <section id="resume" className="section-padding bg-gradient-to-br from-white via-emerald-50/20 to-gray-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 relative overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute top-10 left-20 w-72 h-72 bg-gradient-to-br from-emerald-100 to-emerald-200 rounded-full opacity-10 blur-3xl"></div>
+      <div className="absolute bottom-20 right-10 w-48 h-48 bg-gradient-to-br from-primary-100 to-primary-200 rounded-full opacity-10 blur-3xl"></div>
+      
+      <div className="container-padding mx-auto relative">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
         >
-          <h2 className="heading-2 text-center mb-12">Professional Experience</h2>
+          <h2 className="heading-2 text-center mb-4">
+            <span className="bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent">
+              Professional Experience
+            </span>
+          </h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-primary-500 to-secondary-500 mx-auto mb-12 rounded-full"></div>
           
           <div className="space-y-8">
-            {experience.map((job, index) => (
-              <motion.div
-                key={job.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="bg-gray-50 dark:bg-gray-800 rounded-lg p-6"
-              >
-                <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                  <div>
-                    <h4 className="text-xl font-semibold">{job.title}</h4>
-                    <p className="text-gray-600 dark:text-gray-300">{job.company}</p>
-                    <p className="text-sm text-gray-500 dark:text-gray-400">{job.location}</p>
+            {experience.map((job, index) => {
+              const colors = getJobColors(index)
+              return (
+                <motion.div
+                  key={job.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className={`${colors.bg} ${colors.border} rounded-xl p-8 border shadow-lg hover:shadow-xl transition-all duration-300 group`}
+                  whileHover={{ scale: 1.01, y: -2 }}
+                >
+                  <div className={`w-full h-1 ${colors.accent} rounded-full mb-6`}></div>
+                  
+                  <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-6">
+                    <div className="flex-1">
+                      <h4 className="text-2xl font-bold mb-2 text-gray-900 dark:text-gray-100 group-hover:text-gray-800 dark:group-hover:text-gray-200 transition-colors">
+                        {job.title}
+                      </h4>
+                      <p className={`text-lg font-semibold mb-1 ${colors.text}`}>
+                        {job.company}
+                      </p>
+                      <p className="text-gray-600 dark:text-gray-400 flex items-center">
+                        <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                        {job.location}
+                      </p>
+                    </div>
+                    <div className="mt-4 lg:mt-0">
+                      <span className={`inline-flex items-center px-4 py-2 rounded-full text-sm font-semibold ${colors.badge} border`}>
+                        <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        </svg>
+                        {job.period}
+                      </span>
+                    </div>
                   </div>
-                  <span className="text-primary-600 dark:text-primary-400 font-medium mt-2 md:mt-0">
-                    {job.period}
-                  </span>
-                </div>
-                <ul className="list-disc list-inside space-y-2 text-gray-600 dark:text-gray-300">
-                  {job.description.map((item, i) => (
-                    <li key={i}>{item}</li>
-                  ))}
-                </ul>
-              </motion.div>
-            ))}
+                  
+                  <div className="space-y-3">
+                    {job.description.map((item, i) => (
+                      <motion.div
+                        key={i}
+                        initial={{ opacity: 0, x: -10 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.3, delay: i * 0.1 }}
+                        viewport={{ once: true }}
+                        className="flex items-start space-x-3"
+                      >
+                        <div className={`w-2 h-2 ${colors.accent} rounded-full mt-2 flex-shrink-0`}></div>
+                        <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                          {item}
+                        </p>
+                      </motion.div>
+                    ))}
+                  </div>
+                </motion.div>
+              )
+            })}
           </div>
 
           {/* Download Resume Button */}
-          <div className="text-center mt-12">
-            <a
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            viewport={{ once: true }}
+            className="text-center mt-12"
+          >
+            <motion.a
               href="/resume.pdf"
-              className="inline-flex items-center px-6 py-3 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors"
+              className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-accent-600 to-accent-700 text-white rounded-xl font-semibold shadow-lg hover:shadow-xl hover:from-accent-700 hover:to-accent-800 transition-all duration-300 transform hover:-translate-y-1 group"
               target="_blank"
               rel="noopener noreferrer"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
               <svg
-                className="w-5 h-5 mr-2"
+                className="w-5 h-5 mr-3 group-hover:scale-110 transition-transform"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -118,12 +203,20 @@ const Resume = () => {
                 />
               </svg>
               Download Resume
-            </a>
-          </div>
+              <svg 
+                className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" 
+                fill="none" 
+                stroke="currentColor" 
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+            </motion.a>
+          </motion.div>
         </motion.div>
       </div>
     </section>
   )
 }
 
-export default Resume 
+export default Resume
