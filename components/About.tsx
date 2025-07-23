@@ -65,6 +65,47 @@ const About = () => {
               </div>
             </div>
           </div>
+
+          {/* Interests Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="mt-16"
+          >
+            <h3 className="heading-3 text-center mb-8">Interests & Passions</h3>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 max-w-4xl mx-auto">
+              <div className="text-center p-4 bg-gray-50 dark:bg-gray-800 rounded-lg">
+                <span className="text-2xl mb-2 block">🎵</span>
+                <p className="text-sm font-medium">Music Production</p>
+              </div>
+              <div className="text-center p-4 bg-gray-50 dark:bg-gray-800 rounded-lg">
+                <span className="text-2xl mb-2 block">✈️</span>
+                <p className="text-sm font-medium">Travel</p>
+              </div>
+              <div className="text-center p-4 bg-gray-50 dark:bg-gray-800 rounded-lg">
+                <span className="text-2xl mb-2 block">✍️</span>
+                <p className="text-sm font-medium">Writing</p>
+              </div>
+              <div className="text-center p-4 bg-gray-50 dark:bg-gray-800 rounded-lg">
+                <span className="text-2xl mb-2 block">🌍</span>
+                <p className="text-sm font-medium">Social Enterprise</p>
+              </div>
+              <div className="text-center p-4 bg-gray-50 dark:bg-gray-800 rounded-lg">
+                <span className="text-2xl mb-2 block">🏀⚾</span>
+                <p className="text-sm font-medium">LA Sports</p>
+              </div>
+              <div className="text-center p-4 bg-gray-50 dark:bg-gray-800 rounded-lg col-span-2 md:col-span-1">
+                <span className="text-2xl mb-2 block">🍳</span>
+                <p className="text-sm font-medium">Cooking</p>
+              </div>
+              <div className="text-center p-4 bg-gray-50 dark:bg-gray-800 rounded-lg col-span-2 md:col-span-2 lg:col-span-1">
+                <span className="text-2xl mb-2 block">🍴</span>
+                <p className="text-sm font-medium">Food Explorer</p>
+              </div>
+            </div>
+          </motion.div>
         </motion.div>
       </div>
     </section>
