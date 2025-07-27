@@ -11,6 +11,13 @@ const projects = [
     link: 'https://atraves.net',
   },
   {
+    title: 'GameRelish',
+    description: 'A community-driven feedback platform that helps gaming enthusiasts share constructive feedback and shape the future of their favorite games. Features include a four-tier feedback system (wishlist, relish, mustard, gamebreaker), real-time community voting, comprehensive moderation tools, email notifications for game launches, and a foundational badge system that rewards quality contributions.',
+    technologies: ['Next.js 15', 'TypeScript', 'React Query', 'Supabase', 'PostgreSQL', 'Tailwind CSS'],
+    image: '/bread.svg',
+    link: 'https://gamerelish.com',
+  },
+  {
     title: 'Coming Soon',
     description: 'A crowdfunding platform with a fun twist.',
     technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Node.js', 'Solana, Supabase'],
@@ -37,7 +44,7 @@ const Projects = () => {
           viewport={{ once: true }}
         >
           <h2 className="heading-2 text-center mb-12">Featured Projects</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 gap-8">
             {projects.map((project, index) => (
               <motion.div
                 key={project.title}

@@ -5,53 +5,56 @@ import { motion } from 'framer-motion'
 const experience = [
   {
     title: 'Career Sabbatical / Professional Development',
-    company: 'Self-directed',
+    company: 'Founder / Senior Software Engineer',
     period: 'Jan 2025 - Present',
     location: 'Los Angeles, CA',
     description: [
-      'Studying for the AWS Solutions Architect – Associate exam (July 2025 target), with emphasis on core services and distributed systems design',
-      'Modernizing legacy side projects and developing early-stage, potentially monetizable applications in crowdfunding, blockchain, collaborative writing, and user feedback—leveraging full-stack technologies including React, TypeScript, Node, and AWS',
+      'Architected and launched gamerelish.com, a production-ready feedback platform for gaming franchises, featuring:',
+      '• Enterprise-grade security with 41+ RLS policies and tiered access (user, moderator, admin, owner)',
+      '• Multi-tiered abuse prevention system with honeypots, intelligent rate limiting, IP logging, and CAPTCHA integration',
+      '• Advanced React Query architecture using optimistic updates, cache invalidation, and automatic rollback patterns',
+      '• Next.js 15 application with dynamic routing middleware, 100% TypeScript coverage, and runtime Zod validation',
+      '• Supabase/Postgres backend with real-time sync, RLS, granular access control, and multi-franchise schema support',
+      '• Email automation system with user onboarding, preference management, and feedback alerts',
+      '• SEO optimization, progressive web app (PWA) support, and integrated analytics for performance and discoverability',
+      '• Comprehensive test suite with 100+ passing unit and integration tests across backend and frontend',
+      'Leveraged AI-assisted development workflow with ChatGPT, Claude, and Cursor to accelerate feature development',
+      'Modernized atraves.net, a React/Firebase app for cross-world messaging via antipodal maps with geospatial queries, location fuzzing for privacy, and multilingual support (12 languages)',
+      'Developing early-stage applications in crowdfunding and collaborative writing',
+      'Studying for the AWS Solutions Architect Associate exam (Oct 2025), focused on core AWS services and architectures',
     ],
   },
   {
-    title: 'Senior Software Engineer',
+    title: 'Senior Software Engineer / Software Engineer',
     company: 'Washington Post (Arc XP)',
     period: 'Dec 2019 - Dec 2024',
-    location: 'Chicago, IL & Los Angeles, CA',
-    description: [
-      'Led the complete rebuild of WebSked\'s List View; refactoring a complex legacy AngularJS CMS to use React, enhancing feature set and ensuring scalability and maintainability',
-      'Crafted numerous React components using Bootstrap, Tailwind and CSS that were adapted into internal component libraries and used Chai, Jest and Cypress for unit, integration and end to end testing of single page applications comprised of said components',
-      'Architected an org-wide, config-free user authorization system simplifying access control across all applications in Node.js and reduced client admin support requests by more than 40%',
-      'Built a Node.js and AWS S3 metadata aggregation tool, providing real-time deployment/configuration visibility for each client instance/environment within Arc XP making CI/CD and container level debugging much easier to reason about',
-      'Developed RESTful APIs, automation scripts, DynamoDB schemas enabling granular role-based access control (RBAC)',
-      'Created a Lambda based, Node.js application that consolidated organization metadata and was used for monthly metering numbers',
-      'Solution designed the ability to append featured media in Arc XP\'s most used user facing application (Composer) identifying a critical bottleneck in another team\'s backend service and facilitating a fix to keep the project\'s release timeline on track',
-      'Acted as lead instructor for numerous "Trident Training Sessions" enabling colleagues across various teams to be confident ambassadors and GitHub reviewers for Trident, an app under our team\'s purview and the most used backend application at Arc XP',
-      'Regularly performed i18n audits and text/string translation submissions to ensure our applications were fully translated and interpolated for all of our SLA languages and were right to left (RTL) compliant for the requisite languages',
-      'Provided 24/7 rotational on-call support, handling questions in Slack and triaging bugs and support requests',
-      'Implemented CI/CD best practices to oversee and validate numerous feature deployments within the AWS ecosystem, contributing to the setup and maintenance of cloud infrastructure and system health',
-    ],
-  },
-  {
-    title: 'Frontend Developer',
-    company: 'GoFundMe (CrowdRise by GoFundMe)',
-    period: 'Oct 2018 - May 2019',
     location: 'Los Angeles, CA',
     description: [
-      'Developed Account Settings and Button Management projects using React, Redux, and modern frontend tools',
-      'Sole frontend developer on the then new Report Center project, leveraging Symfony/Twig, jQuery, and CSS3',
-      'Contributed to platform features, including enabling users to publish and unpublish campaigns',
+      'Led rebuild of WebSked\'s List View using React, refactoring legacy AngularJS CMS code for scalability and maintainability',
+      'Crafted React components for Arc internal UI libraries (built with Tailwind/Bootstrap); tested with Chai, Jest, and Cypress',
+      'Architected an org-wide config-free user authorization system in Node.js reducing admin support tickets by >40%',
+      'Created AWS S3 metadata aggregation tools for customer deployment visibility and CI/CD debugging',
+      'Built REST APIs, automation scripts and DynamoDB schemas enabling fine-grained RBAC',
+      'Consolidated monthly usage data using AWS Lambda-based services',
+      'Solution designed Featured Media appending in most used customer facing app and identified critical bottlenecks',
+      'Led cross-functional "Trident Training Sessions" to help colleagues interface with our backend systems more confidently',
+      'Ensured internationalization compliance (i18n) and RTL support for SLA-bound applications',
+      'Rotated in 24/7 on-call support for live triaging and Slack-based incident response',
+      'Implemented and maintained CI/CD pipelines and AWS cloud infrastructure',
     ],
   },
+]
+
+const education = [
   {
-    title: 'Technical Program Management Fellow',
-    company: 'Microsoft (Azure Hybrid Networking ExpressRoute)',
-    period: 'Mar 2018 - Jun 2018',
-    location: 'Redmond, WA',
-    description: [
-      'Procured, diagrammed, and deployed over $800,000 of networking equipment for Ashburn and Seattle labs',
-      'Optimized team-managed lab intake processes to expedite testing of new features and customer scenarios',
-    ],
+    school: 'Hack Reactor / Telegraph Academy',
+    degree: 'Software Engineering Immersive',
+    year: '2016',
+  },
+  {
+    school: 'Dartmouth College',
+    degree: 'BA in Sociology',
+    year: '2012',
   },
 ]
 
@@ -92,6 +95,31 @@ const Resume = () => {
                     <li key={i}>{item}</li>
                   ))}
                 </ul>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Education Section */}
+          <h3 className="heading-3 text-center mt-16 mb-8">Education</h3>
+          <div className="space-y-4 max-w-3xl mx-auto">
+            {education.map((edu, index) => (
+              <motion.div
+                key={edu.school}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="bg-gray-50 dark:bg-gray-800 rounded-lg p-6"
+              >
+                <div className="flex flex-col md:flex-row md:items-center md:justify-between">
+                  <div>
+                    <h4 className="text-lg font-semibold">{edu.school}</h4>
+                    <p className="text-gray-600 dark:text-gray-300">{edu.degree}</p>
+                  </div>
+                  <span className="text-primary-600 dark:text-primary-400 font-medium mt-2 md:mt-0">
+                    {edu.year}
+                  </span>
+                </div>
               </motion.div>
             ))}
           </div>
