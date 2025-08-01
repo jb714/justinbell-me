@@ -20,7 +20,7 @@ const About = () => {
               I'm a Senior Software Engineer with a passion for building scalable systems, streamlining architecture, and shipping thoughtful product features. At The Washington Post’s Arc XP, I solution-designed and shipped features across its most-used applications—Composer, WebSked, and Trident—building and enhancing tools for thousands of internal and client users, powering experiences for tens of millions of downstream users across global sites.
               </p>
               <p className="text-gray-600 dark:text-gray-300">
-              I'm currently on a focused career sabbatical, sharpening my system design and cloud architecture skills as I prepare for the AWS Certified Solutions Architect – Associate exam. Alongside that, I'm building full-stack applications in crowdfunding, blockchain, and real-time collaboration.              </p>
+              I'm currently on a focused career sabbatical, sharpening my system design and cloud architecture skills as I prepare for the AWS Certified Solutions Architect – Associate exam. During this time, I’ve been modernizing Através, a legacy geolocation and messaging app; architecting and scaling GameRelish, a feedback marketplace for games; and building additional full-stack applications in crowdfunding, blockchain, and real-time collaboration.         </p>
               <p className="text-gray-600 dark:text-gray-300">
               Outside of engineering, I produce music, explore LA’s food scene (and my own kitchen), train with rugby in mind, and cheer on the Lakers, Dodgers, and Eagles. Whether I’m coding or creating, I’m drawn to work that lives at the intersection of technology, creativity, and connection.              </p>
               <div className="flex gap-4">
