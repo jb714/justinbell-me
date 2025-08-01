@@ -89,12 +89,12 @@ const Skills = () => {
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
         >
-          <h2 className="heading-2 text-center mb-12">Skills & Expertise</h2>
+          <h2 className="heading-2 text-center mb-12 bg-gradient-to-r from-primary-600 via-rose-500 to-amber-500 bg-clip-text text-transparent">Skills & Expertise</h2>
           <div className="grid md:grid-cols-3 gap-8">
             {skills.map((skillGroup) => (
               <div
                 key={skillGroup.category}
-                className="bg-gray-50 dark:bg-gray-800 rounded-lg p-6"
+                className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-6 shadow-[0_4px_14px_0_rgba(16,185,129,0.1)] hover:shadow-[0_4px_24px_0_rgba(168,85,247,0.3)] transition-all duration-300"
               >
                 <h3 className="text-xl font-semibold mb-6">{skillGroup.category}</h3>
                 <div className="grid grid-cols-2 gap-4">
@@ -105,7 +105,7 @@ const Skills = () => {
                       whileInView={{ opacity: 1, scale: 1 }}
                       transition={{ duration: 0.3 }}
                       viewport={{ once: true }}
-                      className="flex items-center space-x-3 p-3 bg-white dark:bg-gray-700 rounded-lg shadow-sm hover:shadow-md transition-shadow"
+                      className="flex items-center space-x-3 p-3 bg-gray-50 dark:bg-gray-700 rounded-xl shadow-sm hover:shadow-md hover:shadow-accent-500/20 transition-all duration-300"
                     >
                       <skill.icon 
                         className="w-6 h-6" 

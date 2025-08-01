@@ -68,7 +68,7 @@ const Resume = () => {
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
         >
-          <h2 className="heading-2 text-center mb-12">Professional Experience</h2>
+          <h2 className="heading-2 text-center mb-12 bg-gradient-to-r from-primary-500 via-accent-500 to-contrast-500 bg-clip-text text-transparent">Professional Experience</h2>
           
           <div className="space-y-8">
             {experience.map((job, index) => (
@@ -100,7 +100,7 @@ const Resume = () => {
           </div>
 
           {/* Education Section */}
-          <h3 className="heading-3 text-center mt-16 mb-8">Education</h3>
+          <h3 className="heading-3 text-center mt-16 mb-8 bg-gradient-to-r from-contrast-500 via-coral-500 to-accent-500 bg-clip-text text-transparent">Education</h3>
           <div className="space-y-4 max-w-3xl mx-auto">
             {education.map((edu, index) => (
               <motion.div

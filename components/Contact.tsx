@@ -43,7 +43,7 @@ const Contact = () => {
   }
 
   return (
-    <section id="contact" className="section-padding bg-gray-50 dark:bg-gray-800">
+    <section id="contact" className="section-padding bg-gray-50 dark:bg-gray-900/50">
       <div className="container-padding mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -51,7 +51,7 @@ const Contact = () => {
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
         >
-          <h2 className="heading-2 text-center mb-12">Get in Touch</h2>
+          <h2 className="heading-2 text-center mb-12 bg-gradient-to-r from-primary-500 via-accent-500 to-contrast-500 bg-clip-text text-transparent">Get in Touch</h2>
           <div className="grid md:grid-cols-2 gap-12">
             <div>
               <h3 className="text-xl font-semibold mb-4">Let's Connect</h3>
@@ -61,7 +61,7 @@ const Contact = () => {
               <div className="space-y-4">
                 <a
                   href="mailto:justin@justinbell.me"
-                  className="flex items-center text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400"
+                  className="flex items-center text-gray-600 dark:text-gray-300 hover:text-accent-500 hover:underline hover:decoration-success-500 transition-all duration-200"
                 >
                   <svg
                     className="w-6 h-6 mr-3"
@@ -82,7 +82,7 @@ const Contact = () => {
                   href="https://github.com/yourusername"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400"
+                  className="flex items-center text-gray-600 dark:text-gray-300 hover:text-accent-500 hover:underline hover:decoration-success-500 transition-all duration-200"
                 >
                   <svg
                     className="w-6 h-6 mr-3"
@@ -101,7 +101,7 @@ const Contact = () => {
                   href="https://linkedin.com/in/jbell7"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400"
+                  className="flex items-center text-gray-600 dark:text-gray-300 hover:text-rose-500 hover:underline hover:decoration-contrast-500 transition-all duration-200"
                 >
                   <svg
                     className="w-6 h-6 mr-3"
@@ -132,7 +132,7 @@ const Contact = () => {
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white px-4 py-2"
+                  className="mt-1 block w-full rounded-xl border-gray-300 shadow-sm focus:border-accent-500 focus:ring-accent-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white px-4 py-2"
                   required
                   disabled={status === 'submitting'}
                 />
@@ -150,7 +150,7 @@ const Contact = () => {
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white px-4 py-2"
+                  className="mt-1 block w-full rounded-xl border-gray-300 shadow-sm focus:border-accent-500 focus:ring-accent-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white px-4 py-2"
                   required
                   disabled={status === 'submitting'}
                 />
@@ -168,20 +168,20 @@ const Contact = () => {
                   value={formData.message}
                   onChange={handleChange}
                   rows={4}
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white px-4 py-3"
+                  className="mt-1 block w-full rounded-xl border-gray-300 shadow-sm focus:border-accent-500 focus:ring-accent-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white px-4 py-3"
                   required
                   disabled={status === 'submitting'}
                 />
               </div>
               <button
                 type="submit"
-                className="w-full px-6 py-3 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full px-6 py-3 bg-primary-600 text-white rounded-xl hover:bg-primary-700 transition-all duration-200 ease-in-out shadow-md hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
                 disabled={status === 'submitting'}
               >
                 {status === 'submitting' ? 'Sending...' : 'Send Message'}
               </button>
               {status === 'success' && (
-                <p className="text-green-600 dark:text-green-400 text-center">
+                <p className="text-success-600 dark:text-success-500 text-center">
                   Message sent successfully!
                 </p>
               )}
