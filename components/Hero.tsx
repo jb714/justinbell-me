@@ -12,7 +12,7 @@ const Hero = () => {
           transition={{ duration: 0.5 }}
         >
           <h1 className="heading-1 mb-6">
-            <span className="text-primary-600 dark:text-primary-400">Hi, I'm Justin Bell</span>
+            <span className="bg-gradient-to-r from-primary-500 via-accent-500 to-contrast-500 bg-clip-text text-transparent">Hi, I'm Justin Bell</span>
             <br />
             Senior Software Engineer
           </h1>
@@ -23,13 +23,13 @@ const Hero = () => {
           <div className="flex justify-center gap-4">
             <a
               href="#projects"
-              className="px-6 py-3 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors"
+              className="px-6 py-3 bg-primary-600 text-white rounded-xl hover:bg-primary-700 transition-all duration-200 ease-in-out shadow-md hover:shadow-lg"
             >
               View My Work
             </a>
             <a
               href="#contact"
-              className="px-6 py-3 border border-primary-600 text-primary-600 rounded-lg hover:bg-primary-50 dark:hover:bg-primary-900/20 transition-colors"
+              className="px-6 py-3 border border-contrast-500 text-contrast-500 rounded-xl hover:bg-contrast-500 hover:text-white transition-all duration-200 ease-in-out shadow-md hover:shadow-lg"
             >
               Contact Me
             </a>

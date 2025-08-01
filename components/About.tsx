@@ -13,7 +13,7 @@ const About = () => {
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
         >
-          <h2 className="heading-2 text-center mb-12">About Me</h2>
+          <h2 className="heading-2 text-center mb-12 bg-gradient-to-r from-primary-600 via-rose-500 to-amber-500 bg-clip-text text-transparent">About Me</h2>
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
               <p className="text-gray-600 dark:text-gray-300">
@@ -26,38 +26,38 @@ const About = () => {
               <div className="flex gap-4">
                 <a
                   href="#contact"
-                  className="px-6 py-3 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors"
+                  className="px-6 py-3 bg-primary-600 text-white rounded-xl hover:bg-primary-700 transition-all duration-200 ease-in-out shadow-md hover:shadow-lg"
                 >
                   Get in Touch
                 </a>
                 <a
                   href="#projects"
-                  className="px-6 py-3 border border-primary-600 text-primary-600 rounded-lg hover:bg-primary-50 dark:hover:bg-primary-900/20 transition-colors"
+              className="px-6 py-3 border border-amber-500 text-amber-500 rounded-xl hover:bg-amber-500 hover:text-white transition-all duration-200 ease-in-out shadow-md hover:shadow-lg"
                 >
                   View Projects
                 </a>
               </div>
             </div>
             <div className="grid grid-cols-2 gap-4">
-              <div className="p-6 bg-gray-50 dark:bg-gray-800 rounded-lg">
+              <div className="p-6 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl shadow-[0_4px_14px_0_rgba(16,185,129,0.1)] hover:shadow-[0_4px_20px_0_rgba(249,115,22,0.2)] transition-all duration-300">
                 <h3 className="text-xl font-semibold mb-2">Full-Stack Expert</h3>
                 <p className="text-gray-600 dark:text-gray-300">
                   Specializing in React, TypeScript, and AWS cloud services
                 </p>
               </div>
-              <div className="p-6 bg-gray-50 dark:bg-gray-800 rounded-lg">
+              <div className="p-6 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl shadow-[0_4px_14px_0_rgba(16,185,129,0.1)] hover:shadow-[0_4px_20px_0_rgba(249,115,22,0.2)] transition-all duration-300">
                 <h3 className="text-xl font-semibold mb-2">System Architect</h3>
                 <p className="text-gray-600 dark:text-gray-300">
                   Designing scalable solutions and modernizing legacy systems
                 </p>
               </div>
-              <div className="p-6 bg-gray-50 dark:bg-gray-800 rounded-lg">
+              <div className="p-6 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl shadow-[0_4px_14px_0_rgba(16,185,129,0.1)] hover:shadow-[0_4px_20px_0_rgba(249,115,22,0.2)] transition-all duration-300">
                 <h3 className="text-xl font-semibold mb-2">Team Leader</h3>
                 <p className="text-gray-600 dark:text-gray-300">
                   Mentoring colleagues and leading technical initiatives
                 </p>
               </div>
-              <div className="p-6 bg-gray-50 dark:bg-gray-800 rounded-lg">
+              <div className="p-6 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl shadow-[0_4px_14px_0_rgba(16,185,129,0.1)] hover:shadow-[0_4px_20px_0_rgba(249,115,22,0.2)] transition-all duration-300">
                 <h3 className="text-xl font-semibold mb-2">Continuous Learner</h3>
                 <p className="text-gray-600 dark:text-gray-300">
                   Pursuing AWS certification and exploring new technologies
@@ -74,7 +74,7 @@ const About = () => {
             viewport={{ once: true }}
             className="mt-16"
           >
-            <h3 className="heading-3 text-center mb-8">Interests & Passions</h3>
+            <h3 className="heading-3 text-center mb-8 bg-gradient-to-r from-contrast-500 via-coral-500 to-accent-500 bg-clip-text text-transparent">Interests & Passions</h3>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 max-w-4xl mx-auto">
               <div className="text-center p-4 bg-gray-50 dark:bg-gray-800 rounded-lg">
                 <span className="text-2xl mb-2 block">🎵</span>

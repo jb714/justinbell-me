@@ -19,7 +19,7 @@ const Navbar = () => {
     <nav className="fixed top-0 w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm z-50 border-b border-gray-200 dark:border-gray-800">
       <div className="container-padding mx-auto">
         <div className="flex items-center justify-between h-16">
-          <Link href="#home" className="text-xl font-bold text-primary-600 dark:text-primary-400">
+          <Link href="#home" className="text-xl font-bold text-primary-600 dark:text-primary-400 hover:text-accent-500 transition-all duration-200">
             Justin Bell
           </Link>
 
@@ -30,7 +30,7 @@ const Navbar = () => {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="text-gray-600 hover:text-primary-600 dark:text-gray-300 dark:hover:text-primary-400 transition-colors"
+                  className="text-gray-600 hover:text-accent-500 dark:text-gray-300 dark:hover:text-accent-400 hover:underline hover:decoration-success-500 transition-all duration-200"
                 >
                   {item.name}
                 </Link>
@@ -40,7 +40,7 @@ const Navbar = () => {
 
           {/* Mobile Navigation Button */}
           <button
-            className="md:hidden p-2 rounded-md text-gray-600 hover:text-primary-600 dark:text-gray-300 dark:hover:text-primary-400"
+            className="md:hidden p-2 rounded-xl text-gray-600 hover:text-accent-500 dark:text-gray-300 dark:hover:text-accent-400 transition-all duration-200"
             onClick={() => setIsOpen(!isOpen)}
           >
             <svg
@@ -69,7 +69,7 @@ const Navbar = () => {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="block px-3 py-2 rounded-md text-gray-600 hover:text-primary-600 dark:text-gray-300 dark:hover:text-primary-400 transition-colors"
+                  className="block px-3 py-2 rounded-xl text-gray-600 hover:text-accent-500 dark:text-gray-300 dark:hover:text-accent-400 hover:underline hover:decoration-success-500 transition-all duration-200"
                   onClick={() => setIsOpen(false)}
                 >
                   {item.name}

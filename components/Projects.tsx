@@ -35,7 +35,7 @@ const projects = [
 
 const Projects = () => {
   return (
-    <section id="projects" className="section-padding bg-gray-50 dark:bg-gray-800">
+    <section id="projects" className="section-padding bg-gray-50 dark:bg-gray-900/50">
       <div className="container-padding mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -43,7 +43,7 @@ const Projects = () => {
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
         >
-          <h2 className="heading-2 text-center mb-12">Featured Projects</h2>
+          <h2 className="heading-2 text-center mb-12 bg-gradient-to-r from-primary-500 via-accent-500 to-contrast-500 bg-clip-text text-transparent">Featured Projects</h2>
           <div className="grid md:grid-cols-2 gap-8">
             {projects.map((project, index) => (
               <motion.div
@@ -52,7 +52,7 @@ const Projects = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-white dark:bg-gray-900 rounded-lg overflow-hidden shadow-lg"
+                className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden shadow-[0_4px_14px_0_rgba(16,185,129,0.1)] hover:shadow-[0_4px_24px_0_rgba(249,115,22,0.2),0_4px_12px_0_rgba(244,63,94,0.1)] transition-all duration-300"
               >
                 <div className="aspect-video bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
                   {project.image && (
@@ -64,15 +64,18 @@ const Projects = () => {
                   )}
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
+                  <h3 className="text-xl font-semibold mb-2 hover:text-accent-500 hover:underline hover:decoration-success-500 transition-all duration-200 cursor-pointer">{project.title}</h3>
                   <p className="text-gray-600 dark:text-gray-300 mb-4">
                     {project.description}
                   </p>
                   <div className="flex flex-wrap gap-2 mb-4">
-                    {project.technologies.map((tech) => (
+                    {project.technologies.map((tech, techIndex) => (
                       <span
                         key={tech}
-                        className="px-3 py-1 bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 rounded-full text-sm"
+                        className={`px-3 py-1 text-white rounded-full text-sm font-medium shadow-sm ${
+                          techIndex % 3 === 0 ? 'bg-success-500' : 
+                          techIndex % 3 === 1 ? 'bg-contrast-500' : 'bg-rose-500'
+                        }`}
                       >
                         {tech}
                       </span>
@@ -80,7 +83,7 @@ const Projects = () => {
                   </div>
                   <a
                     href={project.link}
-                    className="inline-block px-4 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors"
+                    className="inline-block px-4 py-2 bg-primary-600 text-white rounded-xl hover:bg-primary-700 transition-all duration-200 ease-in-out shadow-md hover:shadow-lg"
                   >
                     View Project
                   </a>
