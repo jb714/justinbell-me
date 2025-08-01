@@ -13,7 +13,7 @@ const projects = [
   },
   {
     title: 'Através',
-    description: 'An interactive web application that helps users find and explore the antipode (opposite point on Earth) of any location. Features include real-time map updates, address geocoding, a unique "Message in a Bottle" feature for leaving messages at antipodes, and support for 12 languages.',
+    description: 'Através is an interactive web app that lets users discover and explore the antipode—the exact opposite point on Earth—for any location. Features include real-time map rendering, address and landmark geocoding, support for 12 languages, and a whimsical “Message in a Bottle” system that lets users leave or discover anonymous messages on the other side of the world.',
     technologies: ['React', 'TypeScript', 'Google Maps API', 'Chakra UI', 'Firebase', 'Firestore'],
     image: '/atraves_screenshot.png',
     link: 'https://atraves.net',
