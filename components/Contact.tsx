@@ -56,12 +56,12 @@ const Contact = () => {
             <div>
               <h3 className="text-xl font-semibold mb-4">Let's Connect</h3>
               <p className="text-gray-600 dark:text-gray-300 mb-6">
-                I'm always open to discussing new projects and ideas
+              I'm always excited to discuss new projects, product challenges, and collaboration opportunities
               </p>
               <div className="space-y-4">
                 <a
                   href="mailto:justin@justinbell.me"
-                  className="flex items-center text-gray-600 dark:text-gray-300 hover:text-accent-500 hover:underline hover:decoration-success-500 transition-all duration-200"
+                  className="flex items-center text-gray-600 dark:text-gray-300 hover:text-accent-500 transition-all duration-200"
                 >
                   <svg
                     className="w-6 h-6 mr-3"
@@ -101,7 +101,7 @@ const Contact = () => {
                   href="https://linkedin.com/in/jbell7"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center text-gray-600 dark:text-gray-300 hover:text-rose-500 hover:underline hover:decoration-contrast-500 transition-all duration-200"
+                  className="flex items-center text-gray-600 dark:text-gray-300 hover:text-accent-500 transition-all duration-200"
                 >
                   <svg
                     className="w-6 h-6 mr-3"
