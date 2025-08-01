@@ -101,7 +101,7 @@ const Resume = () => {
 
           {/* Education Section */}
           <h3 className="heading-3 text-center mt-16 mb-8 bg-gradient-to-r from-contrast-500 via-coral-500 to-accent-500 bg-clip-text text-transparent">Education</h3>
-          <div className="space-y-4 max-w-3xl mx-auto">
+          <div className="space-y-4 max-w-2xl mx-auto">
             {education.map((edu, index) => (
               <motion.div
                 key={edu.school}
@@ -109,7 +109,7 @@ const Resume = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-gray-50 dark:bg-gray-800 rounded-lg p-6"
+                className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-6 shadow-[0_4px_14px_0_rgba(16,185,129,0.1)] hover:shadow-[0_4px_20px_0_rgba(249,115,22,0.2)] transition-all duration-300"
               >
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between">
                   <div>

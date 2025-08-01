@@ -17,8 +17,7 @@ const Hero = () => {
             Senior Software Engineer
           </h1>
           <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
-            I build elegant solutions to complex problems, focusing on creating
-            performant and user-friendly applications.
+          I craft reliable systems and intuitive experiences, focusing on performant and user-friendly applications
           </p>
           <div className="flex justify-center gap-4">
             <a

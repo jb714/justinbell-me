@@ -21,7 +21,7 @@ const projects = [
   },
   {
     title: 'Coming Soon',
-    description: 'A crowdfunding platform with a fun twist.',
+    description: 'A crowdfunding platform with blockchain integration, community-driven features and a fun twist.',
     technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Node.js', 'Solana, Supabase'],
     image: '/bread.svg',
     link: '#',
@@ -29,7 +29,7 @@ const projects = [
   },
   {
     title: 'Coming Soon',
-    description: 'App in the real-time collaboration space.',
+    description: 'A community platform that reimagines how people connect and create together.',
     technologies: ['React', 'Node.js', 'Socket.io', 'PostgreSQL'],
     image: '/bread.svg',
     link: '#',
@@ -67,16 +67,16 @@ const Projects = () => {
                     <img
                       src={project.image}
                       alt={project.title}
-                      className="object-cover w-full h-full"
+                      className={project.status === 'coming_soon' ? "w-16 h-16 opacity-40" : "object-cover w-full h-full"}
                     />
                   )}
                 </div>
-                <div className="p-6">
+                <div className="p-6 pb-8">
                   <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
                   <p className="text-gray-600 dark:text-gray-300 mb-4">
                     {project.description}
                   </p>
-                  <div className="flex flex-wrap gap-2 mb-4">
+                  <div className="flex flex-wrap gap-2 mb-6">
                     {project.technologies.map((tech, techIndex) => (
                       <span
                         key={tech}
@@ -92,13 +92,13 @@ const Projects = () => {
                   {project.status === 'live' ? (
                     <a
                       href={project.link}
-                      className="inline-block px-4 py-2 bg-primary-600 text-white rounded-xl hover:bg-primary-700 transition-all duration-200 ease-in-out shadow-md hover:shadow-lg cursor-pointer"
+                      className="inline-block px-6 py-3 bg-primary-600 text-white rounded-xl hover:bg-primary-700 transition-all duration-200 ease-in-out shadow-md hover:shadow-lg cursor-pointer font-semibold"
                     >
                       View Project
                     </a>
                   ) : (
                     <button
-                      className="inline-block px-4 py-2 bg-gray-400 text-white rounded-xl opacity-80 cursor-not-allowed shadow-sm"
+                      className="inline-block px-6 py-3 bg-gray-400 text-white rounded-xl opacity-80 cursor-not-allowed shadow-sm font-semibold"
                       disabled
                     >
                       Coming Soon
