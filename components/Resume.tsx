@@ -128,12 +128,12 @@ const Resume = () => {
           <div className="text-center mt-12">
             <a
               href="/resume.pdf"
-              className="inline-flex items-center px-6 py-3 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors"
               target="_blank"
               rel="noopener noreferrer"
+              className="inline-flex items-center px-4 py-2 text-gray-500 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-all duration-200 ease-in-out group text-sm border border-gray-300 dark:border-gray-600 rounded-full hover:border-primary-500 dark:hover:border-primary-400"
             >
               <svg
-                className="w-5 h-5 mr-2"
+                className="w-4 h-4 mr-2 group-hover:scale-110 transition-transform duration-200"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
