@@ -17,10 +17,10 @@ const About = () => {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
               <p className="text-gray-600 dark:text-gray-300">
-              I'm a Senior Software Engineer with a passion for building scalable systems, streamlining architecture, and shipping thoughtful product features. At The Washington Post’s Arc XP, I solution-designed and shipped features across its most-used applications—Composer, WebSked, and Trident—building and enhancing tools for thousands of internal and client users, powering experiences for tens of millions of downstream users across global sites.
+              I'm a Senior Software Engineer with a passion for building scalable systems, streamlining architecture, and shipping thoughtful product features. At The Washington Post (Arc XP), I solution-designed and shipped features across its most-used applications—Composer, WebSked, and Trident—building and enhancing tools for thousands of internal and client users, powering experiences for tens of millions of downstream users across global sites.
               </p>
               <p className="text-gray-600 dark:text-gray-300">
-              I'm currently on a focused career sabbatical, sharpening my system design and cloud architecture skills as I prepare for the AWS Certified Solutions Architect – Associate exam. During this time, I’ve been modernizing Através, a legacy geolocation and messaging app; architecting and scaling GameRelish, a feedback marketplace for games; and building additional full-stack applications in crowdfunding, blockchain, and real-time collaboration.         
+              Following organizational restructuring at The Washington Post (Arc XP), I'm continuing professional development through product building and contract engineering. I'm currently a Contract Engineer for a stealth startup in the renewable energy sector, contributing to early-stage platform development. I've also architected and launched GameRelish, a community feedback platform for gaming franchises, and modernized Através, a React/Firebase app for cross-world messaging via antipodal maps. As I prepare for the AWS Certified Solutions Architect – Associate exam, I'm deepening the cloud infrastructure expertise I gained over 5 years at The Washington Post.
               </p>
               <p className="text-gray-600 dark:text-gray-300">
                 Regardless of what I'm doing exactly, I’m always drawn to work that lives at the intersection of technology, creativity, and connection.

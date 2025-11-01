@@ -2,32 +2,34 @@
 
 import { motion } from 'framer-motion'
 
-const experience = [
+interface ExperienceItem {
+  title: string
+  company: string
+  period: string
+  location: string
+  intro?: string
+  description: string[]
+}
+
+const experience: ExperienceItem[] = [
   {
-    title: 'Career Sabbatical / Professional Development',
-    company: 'Founder / Senior Software Engineer',
+    title: 'Independent Software Engineer & Contract Work',
+    company: 'Product Development & Professional Growth',
     period: 'Jan 2025 - Present',
     location: 'Los Angeles, CA',
+    intro: 'Following organizational restructuring at The Washington Post (Arc XP), continuing professional development through product building and contract engineering:',
     description: [
-      'Architected and launched gamerelish.com, a production-ready feedback platform for gaming franchises, featuring:',
-      '• Enterprise-grade security with 41+ RLS policies and tiered access (user, moderator, admin, owner)',
-      '• Multi-tiered abuse prevention system with honeypots, intelligent rate limiting, IP logging, and CAPTCHA integration',
-      '• Advanced React Query architecture using optimistic updates, cache invalidation, and automatic rollback patterns',
-      '• Next.js 15 application with dynamic routing middleware, 100% TypeScript coverage, and runtime Zod validation',
-      '• Supabase/Postgres backend with real-time sync, RLS, granular access control, and multi-franchise schema support',
-      '• Email automation system with user onboarding, preference management, and feedback alerts',
-      '• SEO optimization, progressive web app (PWA) support, and integrated analytics for performance and discoverability',
-      '• Comprehensive test suite with 100+ passing unit and integration tests across backend and frontend',
-      'Leveraged AI-assisted development workflow with ChatGPT, Claude, and Cursor to accelerate feature development',
-      'Modernized atraves.net, a React/Firebase app for cross-world messaging via antipodal maps with geospatial queries, location fuzzing for privacy, and multilingual support (12 languages)',
-      'Developing early-stage applications in crowdfunding and collaborative writing',
-      'Studying for the AWS Solutions Architect Associate exam (Oct 2025), focused on core AWS services and architectures',
+      'Contract Engineer for stealth startup - contributing to early-stage platform development in the renewable energy sector',
+      'Architected, built, and launched GameRelish (gamerelish.com) - a community feedback platform for gaming franchises featuring enterprise-grade architecture: 41+ RLS policies with role-based access, multi-tiered abuse prevention, React Query with optimistic updates, email automation, and Next.js 15 with 100% TypeScript coverage and comprehensive test suite',
+      'Modernized Através (atraves.net) - React/Firebase application (previously built in Angular 1) for cross-world messaging via antipodal maps with geospatial queries, location fuzzing for privacy, and multilingual support (12 languages)',
+      'Preparing for AWS Solutions Architect - Associate certification to deepen cloud infrastructure expertise gained from 5 years at The Washington Post (Arc XP)',
+      'Building new full-stack applications and modernizing legacy projects with current best practices (Next.js, TypeScript, serverless) while exploring AI/ML integration for real-time collaboration and scalability'
     ],
   },
   {
-    title: 'Senior Software Engineer / Software Engineer',
+    title: 'Senior Software Engineer / Software Engineer (Promoted Apr 2023)',
     company: 'Washington Post (Arc XP)',
-    period: 'Dec 2019 - Dec 2024',
+    period: 'Dec 2019 - Dec 2024 (Role eliminated in organizational restructuring)',
     location: 'Los Angeles, CA',
     description: [
       'Led rebuild of WebSked\'s List View using React, refactoring legacy AngularJS CMS code for scalability and maintainability',
@@ -90,6 +92,9 @@ const Resume = () => {
                     {job.period}
                   </span>
                 </div>
+                {job.intro && (
+                  <p className="mb-3 text-gray-600 dark:text-gray-300">{job.intro}</p>
+                )}
                 <ul className="list-disc list-inside space-y-2 text-gray-600 dark:text-gray-300">
                   {job.description.map((item, i) => (
                     <li key={i}>{item}</li>
