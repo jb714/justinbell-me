@@ -13,13 +13,13 @@ interface ExperienceItem {
 
 const experience: ExperienceItem[] = [
   {
-    title: 'Independent Software Engineer & Contract Work',
-    company: 'Product Development & Professional Growth',
+    title: 'Stealth Startup & Independent Projects',
+    company: 'Software Engineer & Product Builder',
     period: 'Jan 2025 - Present',
     location: 'Los Angeles, CA',
-    intro: 'Following organizational restructuring at The Washington Post (Arc XP), continuing professional development through product building and contract engineering:',
+    intro: 'Following organizational restructuring at The Washington Post (Arc XP), continuing professional development through product building and engineering:',
     description: [
-      'Contract Engineer for stealth startup - contributing to early-stage platform development in the renewable energy sector',
+      'Contributing to early-stage platform development for a stealth startup in the renewable energy sector',
       'Architected, built, and launched GameRelish (gamerelish.com) - a community feedback platform for gaming franchises featuring enterprise-grade architecture: 41+ RLS policies with role-based access, multi-tiered abuse prevention, React Query with optimistic updates, email automation, and Next.js 15 with 100% TypeScript coverage and comprehensive test suite',
       'Modernized Através (atraves.net) - React/Firebase application (previously built in Angular 1) for cross-world messaging via antipodal maps with geospatial queries, location fuzzing for privacy, and multilingual support (12 languages)',
       'Preparing for AWS Solutions Architect - Associate certification to deepen cloud infrastructure expertise gained from 5 years at The Washington Post (Arc XP)',
