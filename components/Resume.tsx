@@ -13,28 +13,34 @@ interface ExperienceItem {
 
 const experience: ExperienceItem[] = [
   {
-    title: 'Stealth Startup & Independent Projects',
+    title: 'Senior Software Engineer (Contract)',
+    company: 'AI Product Company (Confidential; NDA bound)',
+    period: 'Dec 2025 - Present',
+    location: 'Los Angeles, CA',
+    description: [
+      'Owned and delivered AI-driven product features across multiple full-stack TypeScript environments (React, Node.js, GraphQL), shipping high-quality, production-ready functionality in fast-paced iteration cycles with strong test coverage'
+    ],
+  },
+  {
+    title: 'Product Engineering & Independent Projects',
     company: 'Software Engineer & Product Builder',
     period: 'Jan 2025 - Present',
     location: 'Los Angeles, CA',
-    intro: 'Following organizational restructuring at The Washington Post (Arc XP), continuing professional development through product building and engineering:',
     description: [
       'Contributing to early-stage platform development for a stealth startup in the renewable energy sector',
-      'Architected, built, and launched GameRelish (gamerelish.com) - a community feedback platform for gaming franchises featuring enterprise-grade architecture: 41+ RLS policies with role-based access, multi-tiered abuse prevention, React Query with optimistic updates, email automation, and Next.js 15 with 100% TypeScript coverage and comprehensive test suite',
-      'Modernized Através (atraves.net) - React/Firebase application (previously built in Angular 1) for cross-world messaging via antipodal maps with geospatial queries, location fuzzing for privacy, and multilingual support (12 languages)',
-      'Preparing for AWS Solutions Architect - Associate certification to deepen cloud infrastructure expertise gained from 5 years at The Washington Post (Arc XP)',
-      'Building new full-stack applications and modernizing legacy projects with current best practices (Next.js, TypeScript, serverless) while exploring AI/ML integration for real-time collaboration and scalability'
+      'Architected, built, and launched GameRelish (gamerelish.com) - a community feedback platform for gaming franchises with enterprise-grade architecture: 41+ RLS policies with role-based access, multi-tiered abuse prevention, React Query with optimistic updates, email automation, and Next.js 15 with 100% TypeScript coverage and comprehensive test suite',
+      'Modernized Através (atraves.net) - React/Firebase application (previously built in Angular 1) for cross-world messaging via antipodal maps with geospatial queries, location fuzzing for privacy, and multilingual support (12 languages)'
     ],
   },
   {
     title: 'Senior Software Engineer / Software Engineer (Promoted Apr 2023)',
     company: 'Washington Post (Arc XP)',
-    period: 'Dec 2019 - Dec 2024 (Role eliminated in organizational restructuring)',
+    period: 'Dec 2019 - Dec 2024',
     location: 'Los Angeles, CA',
     description: [
       'Led rebuild of WebSked\'s List View using React, refactoring legacy AngularJS CMS code for scalability and maintainability',
       'Crafted React components for Arc internal UI libraries (built with Tailwind/Bootstrap); tested with Chai, Jest, and Cypress',
-      'Architected an org-wide config-free user authorization system in Node.js reducing admin support tickets by >40%',
+      'Architected an org-wide config-free user authorization system in Node.js, reducing admin support tickets by >40%',
       'Created AWS S3 metadata aggregation tools for customer deployment visibility and CI/CD debugging',
       'Built REST APIs, automation scripts and DynamoDB schemas enabling fine-grained RBAC',
       'Consolidated monthly usage data using AWS Lambda-based services',
