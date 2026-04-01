@@ -15,7 +15,7 @@ const experience: ExperienceItem[] = [
   {
     title: 'Senior Software Engineer (Contract)',
     company: 'AI Product Company (Confidential; NDA bound)',
-    period: 'Dec 2025 - Present',
+    period: 'Dec 2025 - Mar 2026',
     location: 'Los Angeles, CA',
     description: [
       'Owned and delivered AI-driven product features across multiple full-stack TypeScript environments (React, Node.js, GraphQL), shipping high-quality, production-ready functionality in fast-paced iteration cycles with strong test coverage'
