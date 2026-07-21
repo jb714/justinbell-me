@@ -2,116 +2,87 @@
 
 import { motion } from 'framer-motion'
 
-
 const About = () => {
+  const interests = [
+    'Product Engineering',
+    'Music Production',
+    'Physical Fitness',
+    'Nature & the Outdoors',
+    'Fictional Writing',
+    'Community Impact',
+    'Sports — Lakers / Dodgers / Eagles',
+    'Cooking & Eating',
+  ]
+
   return (
-    <section id="about" className="section-padding bg-white dark:bg-gray-900">
-      <div className="container-padding mx-auto">
+    <section id="about" className="py-24 px-10 border-t border-line">
+      <div className="max-w-[1160px] mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
         >
-          <h2 className="heading-2 text-center mb-12 bg-gradient-to-r from-primary-600 via-rose-500 to-amber-500 bg-clip-text text-transparent">About Me</h2>
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
-              <p className="text-gray-600 dark:text-gray-300">
-              I'm a Senior Software Engineer with a passion for building scalable systems, streamlining architecture, and shipping thoughtful product features. At The Washington Post (Arc XP), I solution-designed and shipped features across its most-used applications—Composer, WebSked, and Trident—building and enhancing tools for thousands of internal and client users, powering experiences for tens of millions of downstream users across global sites.
+          <div className="font-mono text-xs text-accent tracking-wider uppercase mb-3.5">
+            01 — ABOUT
+          </div>
+          <h2 className="font-display text-[40px] tracking-tight font-semibold mb-10">
+            About me
+          </h2>
+
+          <div className="grid gap-14 items-start" style={{ gridTemplateColumns: '1.4fr 1fr' }}>
+            {/* Left: Bio */}
+            <div className="text-[16.5px] leading-[1.72] text-muted flex flex-col gap-5">
+              <p>
+                I'm a Senior Software Engineer focused on building scalable systems, streamlining architecture, and shipping thoughtful product features. At <span className="text-text">The Washington Post (Arc XP)</span>, I solution-designed and shipped features across its most-used applications — Composer, WebSked, and Trident — building tools for thousands of internal and client users, powering experiences for tens of millions downstream.
               </p>
-              <p className="text-gray-600 dark:text-gray-300">
-              Following organizational restructuring at The Washington Post (Arc XP), I'm continuing professional development through product building and contract engineering. I'm currently a Contract Engineer for a stealth startup in the renewable energy sector, contributing to early-stage platform development. I've also architected and launched GameRelish, a community feedback platform for gaming franchises, and modernized Através, a React/Firebase app for cross-world messaging via antipodal maps. As I prepare for the AWS Certified Solutions Architect – Associate exam, I'm deepening the cloud infrastructure expertise I gained over 5 years at The Washington Post.
+              <p>
+                Following organizational restructuring at Arc XP, I'm continuing through product building and contract engineering. I'm currently a Contract Engineer for a stealth startup in renewable energy, I architected and launched <span className="text-text">GameRelish</span>, and modernized <span className="text-text">Através</span>. I'm also preparing for the AWS Solutions Architect – Associate exam.
               </p>
-              <p className="text-gray-600 dark:text-gray-300">
-                Regardless of what I'm doing exactly, I’m always drawn to work that lives at the intersection of technology, creativity, and connection.
+              <p>
+                Regardless of what I'm doing exactly, I'm always drawn to work that lives at the intersection of technology, creativity, and connection.
               </p>
-              <div className="flex gap-4">
-                <a
-                  href="#contact"
-                  className="px-6 py-3 bg-primary-600 text-white rounded-xl hover:bg-primary-700 transition-all duration-200 ease-in-out shadow-md hover:shadow-lg"
-                >
-                  Get in Touch
-                </a>
-                <a
-                  href="#projects"
-                  className="px-6 py-3 border border-contrast-500 text-contrast-500 rounded-xl hover:bg-contrast-500 hover:text-white transition-all duration-200 ease-in-out shadow-md hover:shadow-lg"
-                >
-                  View Projects
-                </a>
-              </div>
             </div>
-            <div className="grid grid-cols-2 gap-4">
-              <div className="p-6 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl shadow-[0_4px_14px_0_rgba(16,185,129,0.1)] hover:shadow-[0_4px_20px_0_rgba(249,115,22,0.2)] transition-all duration-300">
-                <h3 className="text-xl font-semibold mb-2">System Thinker</h3>
-                <p className="text-gray-600 dark:text-gray-300">
-                  Designing resilient architectures with a product-first mindset
-                </p>
+
+            {/* Right: Value Cards */}
+            <div className="grid grid-cols-1 gap-3.5">
+              <div className="border border-line bg-panel rounded-xl p-6">
+                <div className="font-mono text-[11px] text-accent mb-2.5">01</div>
+                <div className="text-base font-semibold mb-1.5">System Thinker</div>
+                <div className="text-[13.5px] leading-relaxed text-muted">Resilient architectures with a product-first mindset.</div>
               </div>
-              <div className="p-6 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl shadow-[0_4px_14px_0_rgba(16,185,129,0.1)] hover:shadow-[0_4px_20px_0_rgba(249,115,22,0.2)] transition-all duration-300">
-                <h3 className="text-xl font-semibold mb-2">Full-Stack Craftsman</h3>
-                <p className="text-gray-600 dark:text-gray-300">
-                  Obsessed with clean code, smart tooling, and end-to-end polish
-                </p>
+              <div className="border border-line bg-panel rounded-xl p-6">
+                <div className="font-mono text-[11px] text-accent mb-2.5">02</div>
+                <div className="text-base font-semibold mb-1.5">Full-Stack Craftsman</div>
+                <div className="text-[13.5px] leading-relaxed text-muted">Obsessed with clean code, smart tooling, and end-to-end polish.</div>
               </div>
-              <div className="p-6 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl shadow-[0_4px_14px_0_rgba(16,185,129,0.1)] hover:shadow-[0_4px_20px_0_rgba(249,115,22,0.2)] transition-all duration-300">
-                <h3 className="text-xl font-semibold mb-2">Product-Driven Engineer</h3>
-                <p className="text-gray-600 dark:text-gray-300">
-                  Bridging design, dev, and business goals with minimal ego
-                </p>
+              <div className="border border-line bg-panel rounded-xl p-6">
+                <div className="font-mono text-[11px] text-accent mb-2.5">03</div>
+                <div className="text-base font-semibold mb-1.5">Product-Driven Engineer</div>
+                <div className="text-[13.5px] leading-relaxed text-muted">Bridging design, dev, and business goals with minimal ego.</div>
               </div>
-              <div className="p-6 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl shadow-[0_4px_14px_0_rgba(16,185,129,0.1)] hover:shadow-[0_4px_20px_0_rgba(249,115,22,0.2)] transition-all duration-300">
-                <h3 className="text-xl font-semibold mb-2">Collaborative Partner</h3>
-                <p className="text-gray-600 dark:text-gray-300">
-                  Brings momentum, clarity, and calm to high-trust teams
-                </p>
+              <div className="border border-line bg-panel rounded-xl p-6">
+                <div className="font-mono text-[11px] text-accent mb-2.5">04</div>
+                <div className="text-base font-semibold mb-1.5">Collaborative Partner</div>
+                <div className="text-[13.5px] leading-relaxed text-muted">Brings momentum, clarity, and calm to high-trust teams.</div>
               </div>
             </div>
           </div>
 
-          {/* Interests Section */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="mt-16"
-          >
-            <h3 className="heading-3 text-center mb-8 bg-gradient-to-r from-contrast-500 via-coral-500 to-accent-500 bg-clip-text text-transparent">Interests & Passions</h3>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-5xl mx-auto">
-              <div className="text-center p-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl shadow-[0_4px_14px_0_rgba(16,185,129,0.1)] hover:shadow-[0_4px_20px_0_rgba(249,115,22,0.2)] transition-all duration-300">
-                <span className="text-2xl mb-2 block">🔧</span>
-                <p className="text-sm font-medium">Product Engineering</p>
-              </div>
-              <div className="text-center p-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl shadow-[0_4px_14px_0_rgba(16,185,129,0.1)] hover:shadow-[0_4px_20px_0_rgba(249,115,22,0.2)] transition-all duration-300">
-                <span className="text-2xl mb-2 block">🎵</span>
-                <p className="text-sm font-medium">Music Production</p>
-              </div>
-              <div className="text-center p-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl shadow-[0_4px_14px_0_rgba(16,185,129,0.1)] hover:shadow-[0_4px_20px_0_rgba(249,115,22,0.2)] transition-all duration-300">
-                <span className="text-2xl mb-2 block">💪</span>
-                <p className="text-sm font-medium">Physical Fitness</p>
-              </div>
-              <div className="text-center p-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl shadow-[0_4px_14px_0_rgba(16,185,129,0.1)] hover:shadow-[0_4px_20px_0_rgba(249,115,22,0.2)] transition-all duration-300">
-                <span className="text-2xl mb-2 block">🌲</span>
-                <p className="text-sm font-medium">Nature & the Outdoors</p>
-              </div>
-              <div className="text-center p-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl shadow-[0_4px_14px_0_rgba(16,185,129,0.1)] hover:shadow-[0_4px_20px_0_rgba(249,115,22,0.2)] transition-all duration-300">
-                <span className="text-2xl mb-2 block">✍️</span>
-                <p className="text-sm font-medium">Fictional Writing</p>
-              </div>
-              <div className="text-center p-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl shadow-[0_4px_14px_0_rgba(16,185,129,0.1)] hover:shadow-[0_4px_20px_0_rgba(249,115,22,0.2)] transition-all duration-300">
-                <span className="text-2xl mb-2 block">🤝</span>
-                <p className="text-sm font-medium">Community Impact</p>
-              </div>
-              <div className="text-center p-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl shadow-[0_4px_14px_0_rgba(16,185,129,0.1)] hover:shadow-[0_4px_20px_0_rgba(249,115,22,0.2)] transition-all duration-300">
-                <span className="text-2xl mb-2 block">🏀⚾🏈</span>
-                <p className="text-sm font-medium">Sports: Lakers/Dodgers/Eagles</p>
-              </div>
-              <div className="text-center p-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl shadow-[0_4px_14px_0_rgba(16,185,129,0.1)] hover:shadow-[0_4px_20px_0_rgba(249,115,22,0.2)] transition-all duration-300">
-                <span className="text-2xl mb-2 block">🍳🍴</span>
-                <p className="text-sm font-medium">Food (Cooking & Eating)</p>
-              </div>
+          {/* Interests */}
+          <div className="mt-12 border-t border-line pt-8">
+            <div className="font-mono text-xs text-muted mb-[18px]">interests & passions</div>
+            <div className="flex gap-2.5 flex-wrap">
+              {interests.map((interest) => (
+                <span
+                  key={interest}
+                  className="border border-line bg-panel px-[15px] py-2 rounded-lg text-[13.5px]"
+                >
+                  {interest}
+                </span>
+              ))}
             </div>
-          </motion.div>
+          </div>
         </motion.div>
       </div>
     </section>

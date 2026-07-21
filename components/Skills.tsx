@@ -1,120 +1,89 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { 
-  SiReact, 
-  SiNextdotjs, 
-  SiTypescript, 
-  SiTailwindcss,
-  SiNodedotjs,
-  SiJavascript,
-  SiHtml5,
-  SiCss3,
-  SiBootstrap,
-  SiSass,
-  SiMongodb,
-  SiAmazon,
-  SiGit,
-  SiJira,
-  SiCypress,
-  SiJest,
-  SiDjango,
-  SiExpress,
-  SiFirebase,
-  SiAngular,
-  SiChakraui,
-  SiAwslambda,
-  SiAmazoncloudwatch,
-  SiAmazons3
-} from 'react-icons/si'
 
 const skills = [
   {
-    category: 'Frontend',
+    path: '~/frontend',
     items: [
-      { name: 'React', icon: SiReact, color: '#61DAFB' },
-      { name: 'Next.js', icon: SiNextdotjs, color: '#000000' },
-      { name: 'TypeScript', icon: SiTypescript, color: '#3178C6' },
-      { name: 'JavaScript', icon: SiJavascript, color: '#F7DF1E' },
-      { name: 'HTML5', icon: SiHtml5, color: '#E34F26' },
-      { name: 'CSS3', icon: SiCss3, color: '#1572B6' },
-      { name: 'Bootstrap', icon: SiBootstrap, color: '#7952B3' },
-      { name: 'SASS', icon: SiSass, color: '#CC6699' },
-      { name: 'Tailwind CSS', icon: SiTailwindcss, color: '#06B6D4' },
-      { name: 'AngularJS', icon: SiAngular, color: '#DD0031' },
-      { name: 'Chakra UI', icon: SiChakraui, color: '#319795' },
+      'React',
+      'Next.js',
+      'TypeScript',
+      'JavaScript',
+      'HTML5',
+      'CSS3',
+      'Bootstrap',
+      'SASS',
+      'Tailwind CSS',
+      'AngularJS',
+      'Chakra UI',
     ],
   },
   {
-    category: 'Backend & Database',
+    path: '~/backend & database',
     items: [
-      { name: 'Node.js', icon: SiNodedotjs, color: '#339933' },
-      { name: 'Express', icon: SiExpress, color: '#000000' },
-      { name: 'MongoDB', icon: SiMongodb, color: '#47A248' },
-      { name: 'Django', icon: SiDjango, color: '#092E20' },
-      { name: 'Firebase', icon: SiFirebase, color: '#FFCA28' },
+      'Node.js',
+      'Express',
+      'MongoDB',
+      'Django',
+      'Firebase',
     ],
   },
   {
-    category: 'Testing & Tools',
+    path: '~/testing & tools',
     items: [
-      { name: 'Cypress', icon: SiCypress, color: '#17202C' },
-      { name: 'Jest', icon: SiJest, color: '#C21325' },
-      { name: 'Git', icon: SiGit, color: '#F05032' },
-      { name: 'JIRA', icon: SiJira, color: '#0052CC' },
+      'Cypress',
+      'Jest',
+      'Git',
+      'JIRA',
     ],
   },
   {
-    category: 'AWS Services',
+    path: '~/aws services',
     items: [
-      { name: 'AWS Lambda', icon: SiAwslambda, color: '#FF9900' },
-      { name: 'CloudWatch', icon: SiAmazoncloudwatch, color: '#FF9900' },
-      { name: 'S3', icon: SiAmazons3, color: '#FF9900' },
-      { name: 'CloudFront', icon: SiAmazon, color: '#FF9900' },
-      { name: 'CloudFormation', icon: SiAmazon, color: '#FF9900' },
-      { name: 'CodePipeline', icon: SiAmazon, color: '#FF9900' },
-      { name: 'CodeBuild', icon: SiAmazon, color: '#FF9900' },
-      { name: 'Container Services', icon: SiAmazon, color: '#FF9900' },
+      'Lambda',
+      'CloudWatch',
+      'S3',
+      'CloudFront',
+      'CloudFormation',
+      'CodePipeline',
+      'CodeBuild',
+      'Container Services',
     ],
   },
 ]
 
 const Skills = () => {
   return (
-    <section id="skills" className="section-padding bg-white dark:bg-gray-900">
-      <div className="container-padding mx-auto">
+    <section id="skills" className="py-24 px-10 border-t border-line bg-panel-2">
+      <div className="max-w-[1160px] mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
         >
-          <h2 className="heading-2 text-center mb-12 bg-gradient-to-r from-primary-600 via-rose-500 to-amber-500 bg-clip-text text-transparent">Skills & Expertise</h2>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="font-mono text-xs text-accent tracking-wider uppercase mb-3.5">
+            04 — SKILLS
+          </div>
+          <h2 className="font-display text-[40px] tracking-tight font-semibold mb-12">
+            Skills & expertise
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-x-14">
             {skills.map((skillGroup) => (
-              <div
-                key={skillGroup.category}
-                className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-6 shadow-[0_4px_14px_0_rgba(16,185,129,0.1)] hover:shadow-[0_4px_24px_0_rgba(168,85,247,0.3)] transition-all duration-300"
-              >
-                <h3 className="text-xl font-semibold mb-6">{skillGroup.category}</h3>
-                <div className="grid grid-cols-2 gap-4">
+              <div key={skillGroup.path}>
+                <div className="font-mono text-xs text-accent mb-4">
+                  {skillGroup.path}
+                </div>
+                <div className="flex gap-[9px] flex-wrap font-mono text-[13px]">
                   {skillGroup.items.map((skill) => (
-                    <motion.div
-                      key={skill.name}
-                      initial={{ opacity: 0, scale: 0.9 }}
-                      whileInView={{ opacity: 1, scale: 1 }}
-                      transition={{ duration: 0.3 }}
-                      viewport={{ once: true }}
-                      className="flex items-center space-x-3 p-3 bg-gray-50 dark:bg-gray-700 rounded-xl shadow-sm hover:shadow-md hover:shadow-accent-500/20 transition-all duration-300"
+                    <span
+                      key={skill}
+                      className="border border-line bg-panel px-3.5 py-2 rounded-lg"
                     >
-                      <skill.icon 
-                        className="w-6 h-6" 
-                        style={{ color: skill.color }}
-                      />
-                      <span className="text-gray-700 dark:text-gray-300 font-medium">
-                        {skill.name}
-                      </span>
-                    </motion.div>
+                      {skill}
+                    </span>
                   ))}
                 </div>
               </div>
