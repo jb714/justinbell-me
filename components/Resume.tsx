@@ -13,23 +13,22 @@ interface ExperienceItem {
 
 const experience: ExperienceItem[] = [
   {
+    title: 'Product Engineering & Independent Projects',
+    company: 'Software Engineer & Product Builder',
+    period: 'Jan 2025 - Present',
+    location: 'Los Angeles, CA',
+    description: [
+      'Architected, built, and launched GameRelish (gamerelish.com) - a community feedback platform for gaming franchises with enterprise-grade architecture: 41+ RLS policies with role-based access, multi-tiered abuse prevention, React Query with optimistic updates, email automation, and Next.js 15 with 100% TypeScript coverage and comprehensive test suite',
+      'Modernized Através (atraves.net) - React/Firebase application (previously built in Angular 1) for cross-world messaging via antipodal maps with geospatial queries, location fuzzing for privacy, and multilingual support (12 languages)'
+    ],
+  },
+  {
     title: 'Senior Software Engineer (Contract)',
     company: 'AI Product Company (Confidential; NDA bound)',
     period: 'Dec 2025 - Mar 2026',
     location: 'Los Angeles, CA',
     description: [
       'Owned and delivered AI-driven product features across multiple full-stack TypeScript environments (React, Node.js, GraphQL), shipping high-quality, production-ready functionality in fast-paced iteration cycles with strong test coverage'
-    ],
-  },
-  {
-    title: 'Product Engineering & Independent Projects',
-    company: 'Software Engineer & Product Builder',
-    period: 'Jan 2025 - Present',
-    location: 'Los Angeles, CA',
-    description: [
-      'Contributing to early-stage platform development for a stealth startup in the renewable energy sector',
-      'Architected, built, and launched GameRelish (gamerelish.com) - a community feedback platform for gaming franchises with enterprise-grade architecture: 41+ RLS policies with role-based access, multi-tiered abuse prevention, React Query with optimistic updates, email automation, and Next.js 15 with 100% TypeScript coverage and comprehensive test suite',
-      'Modernized Através (atraves.net) - React/Firebase application (previously built in Angular 1) for cross-world messaging via antipodal maps with geospatial queries, location fuzzing for privacy, and multilingual support (12 languages)'
     ],
   },
   {
@@ -44,7 +43,7 @@ const experience: ExperienceItem[] = [
       'Created AWS S3 metadata aggregation tools for customer deployment visibility and CI/CD debugging',
       'Built REST APIs, automation scripts and DynamoDB schemas enabling fine-grained RBAC',
       'Consolidated monthly usage data using AWS Lambda-based services',
-      'Solution designed Featured Media appending in most used customer facing app and identified critical bottlenecks',
+      'Authored solution design for Featured Media in Arc\'s highest-traffic customer app, flagging critical bottlenecks pre-build',
       'Led cross-functional "Trident Training Sessions" to help colleagues interface with our backend systems more confidently',
       'Ensured internationalization compliance (i18n) and RTL support for SLA-bound applications',
       'Rotated in 24/7 on-call support for live triaging and Slack-based incident response',
