@@ -22,7 +22,7 @@ const Hero = () => {
             // senior software engineer
           </div>
 
-          <h1 className="font-display text-[80px] leading-none tracking-tighter font-semibold max-w-[16ch] mb-8 sm:text-[52px] md:text-[68px] lg:text-[80px]">
+          <h1 className="font-display text-[44px] leading-none tracking-tighter font-semibold max-w-[16ch] mb-8 sm:text-[52px] md:text-[68px] lg:text-[80px]">
             I craft reliable systems & intuitive experiences.
           </h1>
 

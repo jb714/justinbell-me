@@ -1,12 +1,17 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useTheme } from 'next-themes'
 import Link from 'next/link'
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
+  const [mounted, setMounted] = useState(false)
   const { theme, setTheme } = useTheme()
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   const navItems = [
     { name: 'about', href: '#about' },
@@ -43,7 +48,7 @@ const Navbar = () => {
           onClick={toggleTheme}
           className="border border-line rounded-[20px] px-3.5 py-1.5 text-text select-none min-w-[78px] text-center cursor-pointer hover:border-muted transition-colors duration-[180ms]"
         >
-          {theme === 'dark' ? '☀ Light' : '☾ Dark'}
+          {mounted ? (theme === 'dark' ? '☀ Light' : '☾ Dark') : '\u00A0'}
         </button>
       </div>
 
@@ -87,7 +92,7 @@ const Navbar = () => {
               onClick={toggleTheme}
               className="w-full text-left py-2 text-text"
             >
-              {theme === 'dark' ? '☀ Light mode' : '☾ Dark mode'}
+              {mounted ? (theme === 'dark' ? '☀ Light mode' : '☾ Dark mode') : '\u00A0'}
             </button>
           </div>
         </div>

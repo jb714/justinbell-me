@@ -37,7 +37,7 @@ const About = () => {
                 I'm a Senior Software Engineer focused on building scalable systems, streamlining architecture, and shipping thoughtful product features. At <span className="text-text">The Washington Post (Arc XP)</span>, I solution-designed and shipped features across its most-used applications — Composer, WebSked, and Trident — building tools for thousands of internal and client users, powering experiences for tens of millions downstream.
               </p>
               <p>
-                Following organizational restructuring at Arc XP, I'm continuing through product building and contract engineering. I'm currently a Contract Engineer for a stealth startup in renewable energy, I architected and launched <span className="text-text">GameRelish</span>, and modernized <span className="text-text">Através</span>. I'm also preparing for the AWS Solutions Architect – Associate exam.
+                Since then, I've been building products end-to-end: I architected and launched <span className="text-text">GameRelish</span>, a community feedback platform for gaming franchises, and modernized <span className="text-text">Através</span>, a React/Firebase app for cross-world messaging via antipodal maps. Most recently, I completed a senior engineering contract shipping AI-driven product features across full-stack TypeScript environments.
               </p>
               <p>
                 Regardless of what I'm doing exactly, I'm always drawn to work that lives at the intersection of technology, creativity, and connection.
