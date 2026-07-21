@@ -5,50 +5,38 @@ import { motion } from 'framer-motion'
 const projects = [
   {
     title: 'GameRelish',
-    description: 'A community-driven feedback platform that helps gaming enthusiasts share constructive feedback and shape the future of their favorite games. Features include a four-tier feedback system (wishlist, relish, mustard, gamebreaker), real-time community voting, comprehensive moderation tools, email notifications for game launches, and a foundational badge system that rewards quality contributions.',
-    technologies: ['Next.js 15', 'TypeScript', 'React Query', 'Supabase', 'PostgreSQL', 'Tailwind CSS'],
+    description: 'A community-driven feedback platform helping gaming enthusiasts share constructive feedback and shape the future of their favorite games — a four-tier feedback system, real-time voting, moderation tools, and email notifications.',
+    technologies: ['Next.js 15', 'TypeScript', 'Supabase', 'PostgreSQL'],
     image: '/gamerelish_screenshot.png',
     link: 'https://gamerelish.com',
-    status: 'live',
   },
   {
     title: 'Através',
-    description: 'Através is an interactive web app that lets users discover and explore the antipode—the exact opposite point on Earth—for any location. Features include real-time map rendering, address and landmark geocoding, support for 12 languages, and a whimsical "Message in a Bottle" system that lets users leave or discover anonymous messages on the other side of the world.',
-    technologies: ['React', 'TypeScript', 'Google Maps API', 'Chakra UI', 'Firebase', 'Firestore'],
+    description: 'An interactive web app to discover the antipode — the exact opposite point on Earth for any location. Real-time map rendering, geocoding, 12-language support, and a whimsical "Message in a Bottle" system.',
+    technologies: ['React', 'Google Maps', 'Firebase', 'Firestore'],
     image: '/atraves_screenshot.png',
     link: 'https://atraves.net',
-    status: 'live',
   },
-  // {
-  //   title: 'Coming Soon',
-  //   description: 'A crowdfunding platform with blockchain integration, community-driven features and a fun twist.',
-  //   technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Node.js', 'Solana, Supabase'],
-  //   image: '/bread.svg',
-  //   link: '#',
-  //   status: 'coming_soon',
-  // },
-  // {
-  //   title: 'Coming Soon',
-  //   description: 'A community platform that reimagines how people connect and create together.',
-  //   technologies: ['React', 'Node.js', 'Socket.io', 'PostgreSQL'],
-  //   image: '/bread.svg',
-  //   link: '#',
-  //   status: 'coming_soon',
-  // }
 ]
 
 const Projects = () => {
   return (
-    <section id="projects" className="section-padding bg-gray-50 dark:bg-gray-900/50">
-      <div className="container-padding mx-auto">
+    <section id="projects" className="py-24 px-10 border-t border-line">
+      <div className="max-w-[1160px] mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
         >
-          <h2 className="heading-2 text-center mb-12 bg-gradient-to-r from-primary-500 via-accent-500 to-contrast-500 bg-clip-text text-transparent">Featured Projects</h2>
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="font-mono text-xs text-accent tracking-wider uppercase mb-3.5">
+            03 — PROJECTS
+          </div>
+          <h2 className="font-display text-[40px] tracking-tight font-semibold mb-12">
+            Featured projects
+          </h2>
+
+          <div className="grid md:grid-cols-2 gap-6">
             {projects.map((project, index) => (
               <motion.div
                 key={project.title}
@@ -56,54 +44,35 @@ const Projects = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className={`bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden shadow-[0_4px_14px_0_rgba(16,185,129,0.1)] transition-all duration-300 ${
-                  project.status === 'live' 
-                    ? 'hover:shadow-[0_4px_24px_0_rgba(249,115,22,0.2),0_4px_12px_0_rgba(244,63,94,0.1)]' 
-                    : 'hover:shadow-sm'
-                }`}
+                className="border border-line rounded-2xl overflow-hidden bg-panel"
               >
-                <div className="aspect-video bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
-                  {project.image && (
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className={project.status === 'coming_soon' ? "w-16 h-16 opacity-40" : "object-cover w-full h-full"}
-                    />
-                  )}
-                </div>
-                <div className="p-6 pb-8">
-                  <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-                  <p className="text-gray-600 dark:text-gray-300 mb-4">
+                <div
+                  className="h-[260px] bg-panel-2 bg-cover bg-top border-b border-line"
+                  style={{ backgroundImage: `url(${project.image})` }}
+                />
+                <div className="p-[30px]">
+                  <div className="font-display text-[22px] font-semibold mb-3">
+                    {project.title}
+                  </div>
+                  <div className="text-sm leading-relaxed text-muted mb-5">
                     {project.description}
-                  </p>
-                  <div className="flex flex-wrap gap-2 mb-6">
-                    {project.technologies.map((tech, techIndex) => (
+                  </div>
+                  <div className="flex gap-[7px] flex-wrap mb-[22px] font-mono text-[11.5px] text-accent">
+                    {project.technologies.map((tech) => (
                       <span
                         key={tech}
-                        className={`px-3 py-1 text-white rounded-full text-sm font-medium shadow-sm ${
-                          techIndex % 3 === 0 ? 'bg-success-500' : 
-                          techIndex % 3 === 1 ? 'bg-contrast-500' : 'bg-rose-500'
-                        } ${project.status === 'coming_soon' ? 'opacity-60' : ''}`}
+                        className="border border-card-tint-border bg-card-tint px-2.5 py-[5px] rounded-2xl"
                       >
                         {tech}
                       </span>
                     ))}
                   </div>
-                  {project.status === 'live' ? (
-                    <a
-                      href={project.link}
-                      className="inline-block px-6 py-3 bg-primary-600 text-white rounded-xl hover:bg-primary-700 transition-all duration-200 ease-in-out shadow-md hover:shadow-lg cursor-pointer font-semibold"
-                    >
-                      View Project
-                    </a>
-                  ) : (
-                    <button
-                      className="inline-block px-6 py-3 bg-gray-400 text-white rounded-xl opacity-80 cursor-not-allowed shadow-sm font-semibold"
-                      disabled
-                    >
-                      Coming Soon
-                    </button>
-                  )}
+                  <a
+                    href={project.link}
+                    className="inline-block text-sm font-semibold text-text border-b-[1.5px] border-accent pb-0.5 hover:text-accent transition-colors"
+                  >
+                    View project →
+                  </a>
                 </div>
               </motion.div>
             ))}

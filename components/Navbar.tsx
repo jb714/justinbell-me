@@ -1,84 +1,102 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { useTheme } from 'next-themes'
 import Link from 'next/link'
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
+  const [mounted, setMounted] = useState(false)
+  const { theme, setTheme } = useTheme()
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   const navItems = [
-    { name: 'Home', href: '#home' },
-    { name: 'About', href: '#about' },
-    { name: 'Experience', href: '#resume' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Skills', href: '#skills' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'about', href: '#about' },
+    { name: 'experience', href: '#resume' },
+    { name: 'projects', href: '#projects' },
+    { name: 'skills', href: '#skills' },
+    { name: 'contact', href: '#contact' },
   ]
 
+  const toggleTheme = () => {
+    setTheme(theme === 'dark' ? 'light' : 'dark')
+  }
+
   return (
-    <nav className="fixed top-0 w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm z-50 border-b border-gray-200 dark:border-gray-800">
-      <div className="container-padding mx-auto">
-        <div className="flex items-center justify-between h-16">
-          <Link href="#home" className="text-xl font-bold text-primary-600 dark:text-primary-400 hover:text-accent-500 transition-all duration-200">
-            Justin Bell
-          </Link>
+    <nav className="sticky top-0 z-50 flex items-center justify-between px-10 py-[18px] border-b border-line backdrop-blur-[12px]" style={{ background: 'var(--nav-bg)' }}>
+      {/* Left: Logo with teal dot */}
+      <Link href="#home" className="flex items-center gap-2.5 font-display text-[17px] font-semibold tracking-[0.01em]">
+        <span className="w-2 h-2 rounded-full bg-accent" style={{ boxShadow: '0 0 12px var(--accent)' }}></span>
+        Justin Bell
+      </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:block">
-            <div className="flex items-center space-x-8">
-              {navItems.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className="text-gray-600 hover:text-accent-500 dark:text-gray-300 dark:hover:text-accent-400 transition-all duration-200"
-                >
-                  {item.name}
-                </Link>
-              ))}
-            </div>
-          </div>
-
-          {/* Mobile Navigation Button */}
-          <button
-            className="md:hidden p-2 rounded-xl text-gray-600 hover:text-accent-500 dark:text-gray-300 dark:hover:text-accent-400 transition-all duration-200"
-            onClick={() => setIsOpen(!isOpen)}
+      {/* Desktop Navigation */}
+      <div className="hidden md:flex items-center gap-[30px] font-mono text-[12.5px]">
+        {navItems.map((item) => (
+          <Link
+            key={item.name}
+            href={item.href}
+            className="text-muted hover:text-text transition-colors duration-[180ms]"
           >
-            <svg
-              className="h-6 w-6"
-              fill="none"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              {isOpen ? (
-                <path d="M6 18L18 6M6 6l12 12" />
-              ) : (
-                <path d="M4 6h16M4 12h16M4 18h16" />
-              )}
-            </svg>
-          </button>
-        </div>
-
-        {/* Mobile Navigation Menu */}
-        {isOpen && (
-          <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1">
-              {navItems.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className="block px-3 py-2 rounded-xl text-gray-600 hover:text-accent-500 dark:text-gray-300 dark:hover:text-accent-400 transition-all duration-200"
-                  onClick={() => setIsOpen(false)}
-                >
-                  {item.name}
-                </Link>
-              ))}
-            </div>
-          </div>
-        )}
+            {item.name}
+          </Link>
+        ))}
+        <button
+          onClick={toggleTheme}
+          className="border border-line rounded-[20px] px-3.5 py-1.5 text-text select-none min-w-[78px] text-center cursor-pointer hover:border-muted transition-colors duration-[180ms]"
+        >
+          {mounted ? (theme === 'dark' ? '☀ Light' : '☾ Dark') : '\u00A0'}
+        </button>
       </div>
+
+      {/* Mobile Navigation Button */}
+      <button
+        className="md:hidden p-2 text-muted hover:text-text transition-colors"
+        onClick={() => setIsOpen(!isOpen)}
+      >
+        <svg
+          className="h-6 w-6"
+          fill="none"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          {isOpen ? (
+            <path d="M6 18L18 6M6 6l12 12" />
+          ) : (
+            <path d="M4 6h16M4 12h16M4 18h16" />
+          )}
+        </svg>
+      </button>
+
+      {/* Mobile Navigation Menu */}
+      {isOpen && (
+        <div className="absolute top-full left-0 right-0 md:hidden border-b border-line backdrop-blur-[12px]" style={{ background: 'var(--nav-bg)' }}>
+          <div className="px-10 py-4 space-y-1 font-mono text-[12.5px]">
+            {navItems.map((item) => (
+              <Link
+                key={item.name}
+                href={item.href}
+                className="block py-2 text-muted hover:text-text transition-colors"
+                onClick={() => setIsOpen(false)}
+              >
+                {item.name}
+              </Link>
+            ))}
+            <button
+              onClick={toggleTheme}
+              className="w-full text-left py-2 text-text"
+            >
+              {mounted ? (theme === 'dark' ? '☀ Light mode' : '☾ Dark mode') : '\u00A0'}
+            </button>
+          </div>
+        </div>
+      )}
     </nav>
   )
 }

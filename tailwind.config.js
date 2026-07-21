@@ -5,47 +5,34 @@ module.exports = {
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
-        primary: {
-          500: '#0ea5e9',
-          600: '#0284c7',
-          700: '#0369a1',
-        },
-        accent: {
-          500: '#a855f7',
-          600: '#9333ea',
-        },
-        contrast: {
-          400: '#fb923c',
-          500: '#f97316',
-          600: '#ea580c',
-        },
-        success: {
-          500: '#10b981',
-          600: '#059669',
-        },
-        rose: {
-          500: '#f43f5e',
-        },
-        amber: {
-          500: '#f59e0b',
-          600: '#d97706',
-        },
-        coral: {
-          500: '#f43f5e',
-        },
-        gray: {
-          100: '#f3f4f6',
-          300: '#d1d5db',
-          600: '#4b5563',
-          800: '#1f2937',
-          900: '#111827',
-        },
+        bg: 'var(--bg)',
+        panel: 'var(--panel)',
+        'panel-2': 'var(--panel-2)',
+        text: 'var(--text)',
+        muted: 'var(--muted)',
+        line: 'var(--border)',
+        accent: 'var(--accent)',
+        'accent-ink': 'var(--accent-ink)',
+        'card-tint': 'var(--card-tint)',
+        'card-tint-border': 'var(--card-tint-border)',
+        'hero-grid': 'var(--hero-grid)',
+        'nav-bg': 'var(--nav-bg)',
       },
       fontFamily: {
-        sans: ['Inter', 'sans-serif'],
+        display: ['var(--font-space-grotesk)', 'sans-serif'],
+        sans: ['var(--font-geist)', 'sans-serif'],
+        mono: ['var(--font-jetbrains-mono)', 'monospace'],
+      },
+      letterSpacing: {
+        tighter: '-0.03em',
+        tight: '-0.02em',
+        'tight-sm': '-0.025em',
+        wide: '0.06em',
+        wider: '0.08em',
       },
     },
   },

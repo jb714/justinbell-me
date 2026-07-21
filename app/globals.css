@@ -4,40 +4,54 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* DARK (default) */
+    --bg: #0e0f11;
+    --panel: #16181b;
+    --panel-2: #1b1e22;
+    --text: #e8e9ea;
+    --muted: #8a8f96;
+    --border: #24272b;
+    --accent: #4de3d1;
+    --accent-ink: #0e0f11;
+    --card-tint: #12211f;
+    --card-tint-border: #2b3a38;
+    --hero-grid: #17191c;
+    --nav-bg: rgba(14, 15, 17, 0.82);
   }
 
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+  .light {
+    /* LIGHT override */
+    --bg: #fbfbfa;
+    --panel: #ffffff;
+    --panel-2: #f4f4f2;
+    --text: #1a1a19;
+    --muted: #6b6b68;
+    --border: #e6e6e3;
+    --accent: #0d9488;
+    --accent-ink: #ffffff;
+    --card-tint: #effbf9;
+    --card-tint-border: #c7ece7;
+    --hero-grid: #ececea;
+    --nav-bg: rgba(251, 251, 250, 0.85);
   }
 }
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
-    @apply text-gray-900 dark:text-gray-100;
+    @apply bg-bg text-text transition-colors duration-300;
   }
 }
 
 @layer components {
   .section-padding {
-    @apply py-16 md:py-24;
+    @apply py-24;
   }
-  
+
   .container-padding {
-    @apply px-4 sm:px-6 lg:px-8;
-  }
-  
-  .heading-1 {
-    @apply text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl;
-  }
-  
-  .heading-2 {
-    @apply text-3xl font-bold tracking-tight sm:text-4xl;
-  }
-  
-  .heading-3 {
-    @apply text-2xl font-bold tracking-tight sm:text-3xl;
+    @apply px-10;
   }
 } 
