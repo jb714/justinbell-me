@@ -4,6 +4,13 @@ import { motion } from 'framer-motion'
 
 const projects = [
   {
+    title: 'Sideline Reels',
+    description: 'A human-in-the-loop soccer video product that turns parent-recorded game footage into player-highlighted recruiting reels through GPU tracking, ffmpeg telestration, and durable media orchestration.',
+    technologies: ['Next.js', 'TypeScript', 'Trigger.dev', 'Modal'],
+    image: '/sideline-reels_screenshot.png',
+    link: 'https://sideline-reels.vercel.app',
+  },
+  {
     title: 'GameRelish',
     description: 'A community-driven feedback platform helping gaming enthusiasts share constructive feedback and shape the future of their favorite games — a four-tier feedback system, real-time voting, moderation tools, and email notifications.',
     technologies: ['Next.js 15', 'TypeScript', 'Supabase', 'PostgreSQL'],
@@ -36,7 +43,7 @@ const Projects = () => {
             Featured projects
           </h2>
 
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {projects.map((project, index) => (
               <motion.div
                 key={project.title}
@@ -83,4 +90,4 @@ const Projects = () => {
   )
 }
 
-export default Projects 
+export default Projects

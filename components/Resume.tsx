@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import type { ReactNode } from 'react'
 
 interface ExperienceItem {
   title: string
@@ -8,19 +9,38 @@ interface ExperienceItem {
   period: string
   location: string
   intro?: string
-  description: string[]
+  description: ReactNode[]
   isTwoColumn?: boolean
 }
 
 const experience: ExperienceItem[] = [
   {
     title: 'Product Engineering & Independent Projects',
-    company: 'Software Engineer & Product Builder',
+    company: 'Senior Software Engineer & Product Builder',
     period: 'Jan 2025 - Present',
     location: 'Los Angeles, CA',
     description: [
-      'Architected, built, and launched GameRelish (gamerelish.com) - a community feedback platform for gaming franchises with enterprise-grade architecture: 41+ RLS policies with role-based access, multi-tiered abuse prevention, React Query with optimistic updates, email automation, and Next.js 15 with 100% TypeScript coverage and comprehensive test suite',
-      'Modernized Através (atraves.net) - React/Firebase application (previously built in Angular 1) for cross-world messaging via antipodal maps with geospatial queries, location fuzzing for privacy, and multilingual support (12 languages)'
+      <>
+        Built Sideline Reels (
+        <a
+          href="https://sideline-reels.vercel.app"
+          className="text-text underline decoration-accent underline-offset-2 hover:text-accent transition-colors"
+        >
+          sideline-reels.vercel.app
+        </a>
+        ), a human-in-the-loop soccer video product that transforms parent-recorded footage into player-highlighted recruiting reels using Next.js and TypeScript, a Modal-hosted YOLO11/ByteTrack tracking service, and ffmpeg telestration
+      </>,
+      'Designed Sideline Reels’ durable media pipeline spanning resumable direct-to-R2 uploads, Trigger.dev orchestration for normalization, tracking, rendering, and multi-clip reel assembly, plus privacy-first deletion cascades for source footage and derived assets',
+      <>
+        Architected, launched, and independently operated GameRelish (
+        <a
+          href="https://gamerelish.com"
+          className="text-text underline decoration-accent underline-offset-2 hover:text-accent transition-colors"
+        >
+          gamerelish.com
+        </a>
+        ), a community feedback platform live since July 2025, with 41+ row-level security policies, layered abuse prevention, optimistic React Query updates, email automation, and 250+ automated tests
+      </>,
     ],
   },
   {
@@ -29,27 +49,23 @@ const experience: ExperienceItem[] = [
     period: 'Dec 2025 - Mar 2026',
     location: 'Los Angeles, CA',
     description: [
-      'Owned and delivered AI-driven product features across multiple full-stack TypeScript environments (React, Node.js, GraphQL), shipping high-quality, production-ready functionality in fast-paced iteration cycles with strong test coverage'
+      'Delivered production AI-driven features across multiple full-stack TypeScript applications using React, Node.js, and GraphQL, with rapid iteration and strong automated test coverage',
     ],
   },
   {
     title: 'Senior Software Engineer / Software Engineer (Promoted Apr 2023)',
-    company: 'Washington Post (Arc XP)',
+    company: 'The Washington Post (Arc XP)',
     period: 'Dec 2019 - Dec 2024',
     location: 'Los Angeles, CA',
     isTwoColumn: true,
     description: [
-      'Led rebuild of WebSked\'s List View using React, refactoring legacy AngularJS CMS code for scalability and maintainability',
-      'Crafted React components for Arc internal UI libraries (built with Tailwind/Bootstrap); tested with Chai, Jest, and Cypress',
-      'Architected an org-wide config-free user authorization system in Node.js, reducing admin support tickets by >40%',
-      'Created AWS S3 metadata aggregation tools for customer deployment visibility and CI/CD debugging',
-      'Built REST APIs, automation scripts and DynamoDB schemas enabling fine-grained RBAC',
-      'Consolidated monthly usage data using AWS Lambda-based services',
-      'Authored solution design for Featured Media in Arc\'s highest-traffic customer app, flagging critical bottlenecks pre-build',
-      'Led cross-functional "Trident Training Sessions" to help colleagues interface with our backend systems more confidently',
+      'Led React rebuild of WebSked’s List View, replacing legacy AngularJS architecture to improve maintainability and scalability',
+      'Architected an organization-wide, config-free user authorization system in Node.js, reducing admin support tickets by >40%',
+      'Built REST APIs, automation tooling and DynamoDB schemas supporting fine-grained role-based access control',
+      'Authored the solution design for Featured Media in Arc\'s highest-traffic customer app, flagging critical bottlenecks pre-build',
       'Ensured internationalization compliance (i18n) and RTL support for SLA-bound applications',
-      'Rotated in 24/7 on-call support for live triaging and Slack-based incident response',
-      'Implemented and maintained CI/CD pipelines and AWS cloud infrastructure',
+      'Maintained CI/CD pipelines and AWS cloud infrastructure; rotated through 24/7 on-call support for incident response across SLA-bound applications',
+      'Led cross-functional training sessions on Arc XP’s core request-routing, authentication, and authorization systems, enabling technical and nontechnical colleagues to work more confidently across the platform',
     ],
   },
 ]
@@ -133,4 +149,4 @@ const Resume = () => {
   )
 }
 
-export default Resume 
+export default Resume

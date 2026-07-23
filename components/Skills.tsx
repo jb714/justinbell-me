@@ -4,51 +4,57 @@ import { motion } from 'framer-motion'
 
 const skills = [
   {
-    path: '~/frontend',
+    path: '~/languages & frameworks',
     items: [
-      'React',
-      'Next.js',
       'TypeScript',
       'JavaScript',
-      'HTML5',
-      'CSS3',
-      'Bootstrap',
-      'SASS',
-      'Tailwind CSS',
-      'AngularJS',
-      'Chakra UI',
-    ],
-  },
-  {
-    path: '~/backend & database',
-    items: [
+      'React',
+      'Next.js',
       'Node.js',
-      'Express',
-      'MongoDB',
-      'Django',
+      'GraphQL',
+      'Tailwind',
+      'NestJS',
+    ],
+  },
+  {
+    path: '~/backend & data',
+    items: [
+      'REST APIs',
+      'PostgreSQL',
+      'DynamoDB',
+      'Supabase',
       'Firebase',
+      'Redis',
+      'Row-level security',
     ],
   },
   {
-    path: '~/testing & tools',
+    path: '~/cloud & infrastructure',
     items: [
-      'Cypress',
+      'AWS',
+      'Cloudflare R2',
+      'Docker',
+      'CI/CD',
+      'GitHub Actions',
+      'Trigger.dev',
+      'Modal',
+    ],
+  },
+  {
+    path: '~/applied ai & media',
+    items: [
+      'Computer vision integration',
+      'GPU inference workflows',
+      'ffmpeg',
+      'Human-in-the-loop system design',
+    ],
+  },
+  {
+    path: '~/testing',
+    items: [
       'Jest',
-      'Git',
-      'JIRA',
-    ],
-  },
-  {
-    path: '~/aws services',
-    items: [
-      'Lambda',
-      'CloudWatch',
-      'S3',
-      'CloudFront',
-      'CloudFormation',
-      'CodePipeline',
-      'CodeBuild',
-      'Container Services',
+      'Cypress',
+      'Chai',
     ],
   },
 ]
@@ -95,4 +101,4 @@ const Skills = () => {
   )
 }
 
-export default Skills 
+export default Skills

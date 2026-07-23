@@ -37,7 +37,7 @@ const About = () => {
                 I'm a Senior Software Engineer focused on building scalable systems, streamlining architecture, and shipping thoughtful product features. At <span className="text-text">The Washington Post (Arc XP)</span>, I solution-designed and shipped features across its most-used applications — Composer, WebSked, and Trident — building tools for thousands of internal and client users, powering experiences for tens of millions downstream.
               </p>
               <p>
-                Since then, I've been building products end-to-end: I architected and launched <span className="text-text">GameRelish</span>, a community feedback platform for gaming franchises, and modernized <span className="text-text">Através</span>, a React/Firebase app for cross-world messaging via antipodal maps. Most recently, I completed a senior engineering contract shipping AI-driven product features across full-stack TypeScript environments.
+                Since then, I've been building products end-to-end: <span className="text-text">Sideline Reels</span>, a human-in-the-loop soccer video product; <span className="text-text">GameRelish</span>, a community feedback platform for gaming franchises; and <span className="text-text">Através</span>, a React/Firebase app for cross-world messaging via antipodal maps. Most recently, I completed a senior engineering contract shipping AI-driven product features across full-stack TypeScript environments.
               </p>
               <p>
                 Regardless of what I'm doing exactly, I'm always drawn to work that lives at the intersection of technology, creativity, and connection.
@@ -89,4 +89,4 @@ const About = () => {
   )
 }
 
-export default About 
+export default About
