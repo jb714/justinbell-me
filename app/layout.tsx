@@ -39,8 +39,8 @@ const jetbrainsMono = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'Justin Bell - Software Engineer',
-  description: 'Portfolio website showcasing software engineering projects and skills',
+  title: 'Justin Bell - Senior Software Engineer & Product Builder',
+  description: 'Senior software engineer and product builder working across full-stack TypeScript, applied AI, and durable media systems.',
   icons: {
     icon: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y=".9em" font-size="90">🌊</text></svg>',
     shortcut: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y=".9em" font-size="90">🌊</text></svg>',
@@ -62,4 +62,4 @@ export default function RootLayout({
       </body>
     </html>
   )
-} 
+}
